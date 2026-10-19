@@ -14,10 +14,10 @@ This repository contains the code for the paper "An Adjoint-based Neural Regulat
    <img alt="Image 4" src="result_images/case_c_mpc.png"  width="45%" />
 </p>
 <p align="center">
-   <img alt="image 1" src="ANR/figs/animation_c_no_obs.gif" width="95%" />
+   <img alt="image 1" src="ANR/figs/animation_c_no_obs.gif" width="80%" />
 </p>
 
-**Figure 2:** Out-of-distribution comparison with a nonzero reference for 100 randomly sampled initial states. **Top left** = ANR, **Top right** = RL-QC, **Bottom left** = RL-PB, **Bottom right** = MPC-IPOPT. The animation below shows the evolution of the ANR costates.
+**Figure 2:** Out-of-distribution comparison with a nonzero reference for 100 randomly sampled initial states. **Top left** = ANR, **Top right** = RL-QC, **Bottom left** = RL-PB, **Bottom right** = MPC-IPOPT. The animation  shows the evolution of the ANR costates.
 
 
 ### **Scenario 2: State and Control Trajectories with Obstacles for ANR, RL, and MPC**
@@ -29,9 +29,9 @@ This repository contains the code for the paper "An Adjoint-based Neural Regulat
   <img alt="Image 3" src="result_images/case_b_obs_mpc.png"  width="30%" />
 </p>
 <p align="center">
-   <img alt="image 1" src="ANR/figs/animation_b_obs3.gif" width="95%" />
+   <img alt="image 1" src="ANR/figs/animation_b_obs3.gif" width="80%" />
 </p>
- **Figure 3:** Constrained out-of-distribution evaluation: Top trajectories for 50 random initial states and Bottom state and control input trajectories for a representative case (in purple). **Left** = ANR, **Middle** = RL-PB, **Right** = MPC-IPOPT. The animation below shows the evolution of the ANR costates.
+ **Figure 3:** Constrained out-of-distribution evaluation: Top trajectories for 50 random initial states and Bottom state and control input trajectories for a representative case (in purple). **Left** = ANR, **Middle** = RL-PB, **Right** = MPC-IPOPT. The animation shows the evolution of the ANR costates.
 
 **Case C: Unseen initial conditions and nonzero reference**
 <p align="center">
@@ -40,10 +40,10 @@ This repository contains the code for the paper "An Adjoint-based Neural Regulat
   <img alt="Image 3" src="result_images/case_c_obs_mpc.png"  width="30%" />
 </p>
 <p align="center">
-   <img alt="image 1" src="ANR/figs/animation_c_obs3.gif" width="95%" />
+   <img alt="image 1" src="ANR/figs/animation_c_obs3.gif" width="80%" />
 </p>
 
-**Figure 4:** Constrained out-of-distribution evaluation: Top trajectories for 50 random initial states and Bottom state and control input trajectories for a representative case (in purple). **Left** = ANR, **Middle** = RL-PB, **Right** = MPC-IPOPT. The animation below shows the evolution of the ANR costates.
+**Figure 4:** Constrained out-of-distribution evaluation: Top trajectories for 50 random initial states and Bottom state and control input trajectories for a representative case (in purple). **Left** = ANR, **Middle** = RL-PB, **Right** = MPC-IPOPT. The animation shows the evolution of the ANR costates.
 
 
 ## Run Locally
