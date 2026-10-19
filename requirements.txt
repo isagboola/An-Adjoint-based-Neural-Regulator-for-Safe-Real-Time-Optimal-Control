@@ -1,0 +1,13 @@
+numpy==1.26.4
+scipy==1.15.3
+sympy==1.13.1
+matplotlib==3.10.8
+torch==2.5.1
+torchdiffeq==0.2.5
+casadi==3.7.2
+networkx==3.4.2
+gym==0.26.2
+tqdm==4.67.3
+qpth==0.0.18
+pillow==11.1.0
+pyglet==1.4.10
