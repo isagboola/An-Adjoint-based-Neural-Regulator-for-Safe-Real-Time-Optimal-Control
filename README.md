@@ -180,15 +180,15 @@ For the direct RL `main.py` commands above, set disturbance using `--disturbance
 
 **Case B: Unseen initial conditions and zero reference**
 <p align="center">
-   <img alt="Image 1" src="ANR/figs/final_shot/final_shot_mpc_acados_rti_N30_b_no_obs.png" width="38%" />
-   <img alt="Image 2" src="ANR/figs/mpc_N30_h50_acados_rti_b_no_obs.png" width="55%" />
+   <img alt="Image 1" src="ANR/figs/final_shot/final_shot_mpc_acados_rti_N30_b_no_obs.png" width="56%" />
+   <img alt="Image 2" src="ANR/figs/mpc_N30_h50_acados_rti_b_no_obs.png" width="32%" />
 </p>
 
 
 **Case C: Unseen initial conditions and nonzero reference**
 <p align="center">
-   <img alt="Image 1" src="ANR/figs/final_shot/final_shot_mpc_acados_rti_N30_c_no_obs.png" width="40%" />
-  <img alt="Image 2" src="ANR/figs/mpc_N30_h50_acados_rti_c_no_obs.png" width="55%" />
+   <img alt="Image 1" src="ANR/figs/final_shot/final_shot_mpc_acados_rti_N30_c_no_obs.png" width="58%" />
+  <img alt="Image 2" src="ANR/figs/mpc_N30_h50_acados_rti_c_no_obs.png" width="32%" />
 </p>
 
 
@@ -196,21 +196,21 @@ For the direct RL `main.py` commands above, set disturbance using `--disturbance
 
 **Case A: Seen initial conditions and zero reference**
 <p align="center">
-   <img alt="Image 1" src="ANR/figs/final_shot/final_shot_mpc_acados_rti_N30_a_obs2.png" width="38%" />
-   <img alt="Image 2" src="ANR/figs/mpc_N30_h50_acados_rti_a_obs2.png" width="55%" />
+   <img alt="Image 1" src="ANR/figs/final_shot/final_shot_mpc_acados_rti_N30_a_obs2.png" width="56%" />
+   <img alt="Image 2" src="ANR/figs/mpc_N30_h50_acados_rti_a_obs2.png" width="32%" />
 </p>
 
 **Case B: Unseen initial conditions and zero reference**
 <p align="center">
-   <img alt="Image 1" src="ANR/figs/final_shot/final_shot_mpc_acados_rti_N30_b_obs3.png" width="38%" />
-   <img alt="Image 2" src="ANR/figs/mpc_N30_h50_acados_rti_b_obs3.png" width="55%" />
+   <img alt="Image 1" src="ANR/figs/final_shot/final_shot_mpc_acados_rti_N30_b_obs3.png" width="56%" />
+   <img alt="Image 2" src="ANR/figs/mpc_N30_h50_acados_rti_b_obs3.png" width="32%" />
 </p>
 
 
 **Case C: Unseen initial conditions and nonzero reference**
 <p align="center">
-   <img alt="Image 1" src="ANR/figs/final_shot/final_shot_mpc_acados_rti_N30_c_obs3.png" width="40%" />
-  <img alt="Image 2" src="ANR/figs/mpc_N30_h50_acados_rti_c_obs3.png" width="55%" />
+   <img alt="Image 1" src="ANR/figs/final_shot/final_shot_mpc_acados_rti_N30_c_obs3.png" width="58%" />
+  <img alt="Image 2" src="ANR/figs/mpc_N30_h50_acados_rti_c_obs3.png" width="32%" />
 </p>
 
 
