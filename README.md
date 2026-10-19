@@ -174,8 +174,8 @@ For the direct RL `main.py` commands above, set disturbance using `--disturbance
 
 **Case A: Seen initial conditions and zero reference**
 <p align="center">
-   <img alt="Image 1" src="ANR/figs/final_shot/final_shot_mpc_acados_rti_N30_a_no_obs.png" width="45%" />
-   <img alt="Image 2" src="ANR/figs/mpc_N30_h50_acados_rti_a_no_obs.png" width="30%" />
+   <img alt="Image 1" src="ANR/figs/final_shot/final_shot_mpc_acados_rti_N30_a_no_obs.png" width="50%" />
+   <img alt="Image 2" src="ANR/figs/mpc_N30_h50_acados_rti_a_no_obs.png" width="33%" />
 </p>
 
 **Case B: Unseen initial conditions and zero reference**
