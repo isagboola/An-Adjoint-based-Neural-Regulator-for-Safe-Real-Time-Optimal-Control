@@ -71,12 +71,12 @@ Run benchmark generators from the repository root. For the scripts below, use `c
  - run `train.py` to train the Co-state Neural Network (CoNN) used in Adjoint-based Neural Regulator (ANR).
  - run `sim_ANR.py` and `sim_mpc.py` to generate simulation results using ANR and MPC, respectively.
  - run `sim_ANR_random_init_case_c.py` to see the performance of ANR evaluated over 100 initial states (**Obstacle-Free Scenarios, CASE C**).
- - run `_sim\_MPC\_ipopt\_random\_init\_case\_c.py_` to see the performance of MPC evaluated over 100 initial states (**Obstacle-Free Scenarios, CASE C**).
- - run `_sim\_Rl\_random\_init\_case\_c.py_` to see the performance of RL evaluated over 100 initial states  (**Obstacle-Free Scenarios, CASE C**).
+ - run `sim_MPC_ipopt_random_init_case_c.py` to see the performance of MPC evaluated over 100 initial states (**Obstacle-Free Scenarios, CASE C**).
+ - run `sim_Rl_random_init_case_c.py` to see the performance of RL evaluated over 100 initial states  (**Obstacle-Free Scenarios, CASE C**).
 
-  - run `_sim\_ANR\_case\_b\_obs.py_`, `_sim\_ANR\_case\_c\_obs.py_` to see the performance of ANR evaluated over 50 trials on constrained out-of-distribution settings for case B and Case C respectively (**Obstacles-Laden Scenarios**). 
- - run `_sim\_MPC\_ipopt\_case\_b\_obs.py_`, `_sim\_MPC\_ipopt\_case\_c\_obs.py_`  to see the performance of MPC-ipopt evaluated over 50 trials on constrained out-of-distribution settings for case B and Case C respectively (**Obstacles-Laden Scenarios**). 
- - run `_sim\_Rl\_random\_b\_obs.py_`, `_sim\_Rl\_random\_c\_obs.py_` to see the performance of RL evaluated over 50 trials on constrained out-of-distribution settings for case B and Case C respectively (**Obstacles-Laden Scenarios**). 
+ - run `sim_ANR_case_b_obs.py`, `sim_ANR_case_c_obs.py` to see the performance of ANR evaluated over 50 trials on constrained out-of-distribution settings for case B and Case C, respectively (**Obstacles-Laden Scenarios**). 
+ - run `sim_MPC_ipopt_case_b_obs.py`, `sim_MPC_ipopt_case_c_obs.py`  to see the performance of MPC-ipopt evaluated over 50 trials on constrained out-of-distribution settings for Case B and Case C, respectively (**Obstacles-Laden Scenarios**). 
+ - run `sim_Rl_random_b_obs.py`, `sim_Rl_random_c_obs.py` to see the performance of RL evaluated over 50 trials on constrained out-of-distribution settings for Case B and Case C, respectively (**Obstacles-Laden Scenarios**). 
  - run `compare_ANR_case_c_obs.py` to generate overlays comparing nominal ANR behavior with ANR behavior under mass mismatch and disturbance for Case C with obstacles.
 
 Before running a benchmark evaluator, generate its matching dataset if it is missing. From the repository root, run `python` with one of these scripts: `generate_case_a_benchmark.py`, `generate_case_b_benchmark.py`, `generate_case_c_benchmark.py`, `generate_case_b_obstacle_benchmark.py`, or `generate_case_c_obstacle_benchmark.py`. For example:
