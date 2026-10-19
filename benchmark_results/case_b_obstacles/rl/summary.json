@@ -1,0 +1,1578 @@
+{
+  "controller": "RL",
+  "controller_metadata": {
+    "checkpoint": "C:\\Users\\agboola\\OneDrive - Umich\\Desktop\\Als Lab\\Fall'26\\ACC code\\ANR_with_disturbances v2\\RL_SAC_HOCBF\\output\\Unicycle-run5\\actor.pkl",
+    "resume": "5",
+    "policy": "GaussianPolicy deterministic tanh(mean)",
+    "device": "cpu",
+    "plant_integration": "forward Euler (existing RL environment)",
+    "cbf_mode": "baseline",
+    "qp_solver": "qpth",
+    "qp_solver_lifecycle": "qpth call per control step",
+    "obstacles": [
+      {
+        "r": 0.5,
+        "xo": -4.0,
+        "yo": 2.0
+      },
+      {
+        "r": 0.5,
+        "xo": -1.5,
+        "yo": 1.5
+      },
+      {
+        "r": 0.5,
+        "xo": -2.5,
+        "yo": 3.0
+      }
+    ],
+    "robot_radius": 0.25,
+    "safety_margin": 0.05,
+    "terminate_on_goal": false,
+    "timing_scope": "observation, actor inference, HOCBF-QP, action transfer and bounds; excludes plant",
+    "inference_warmup_calls": 1,
+    "disturbance_enabled": false,
+    "disturbance_velocity_std": 0.3,
+    "disturbance_seed": 10,
+    "disturbance_distribution": "iid Normal(0, disturbance_velocity_std^2)",
+    "disturbance_assignment": "SeedSequence([disturbance_seed, one-based trial number])",
+    "disturbance_location": "plant velocity derivative: v_dot = a + d_v"
+  },
+  "dataset_path": "C:\\Users\\agboola\\OneDrive - Umich\\Desktop\\Als Lab\\Fall'26\\ACC code\\ANR_with_disturbances v2\\benchmark data\\case_b_obstacle_benchmark.csv",
+  "dataset_id": "33e04d28f4c3e56210df0cd0930b761ee0191041ba36607ea47d7534b9f11241",
+  "benchmark_metadata": {
+    "schema_version": 1,
+    "num_trials": 50,
+    "random_seed": 0,
+    "sample_attempts": 54,
+    "rejected_workspace": 4,
+    "rejected_obstacle": 1,
+    "dt": 0.05,
+    "success_threshold": 0.6,
+    "robot_radius": 0.25,
+    "safety_margin": 0.05,
+    "terminal_weight": 50.0,
+    "dataset_id": "33e04d28f4c3e56210df0cd0930b761ee0191041ba36607ea47d7534b9f11241",
+    "case": "b",
+    "scenario": "three_fixed_obstacles",
+    "random_generator": "numpy.random.default_rng/PCG64",
+    "success_rule": "complete rollout, wrapped-angle ACE <= threshold, and no physical obstacle collision",
+    "simulation_steps": 200,
+    "goal": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sampling_bounds": {
+      "theta": [
+        -3.141592653589793,
+        3.141592653589793
+      ],
+      "v": [
+        0.0,
+        0.0
+      ],
+      "x": [
+        -8.0,
+        -3.0
+      ],
+      "y": [
+        2.0,
+        7.0
+      ]
+    },
+    "training_bounds": {
+      "theta": [
+        -3.141592653589793,
+        3.141592653589793
+      ],
+      "v": [
+        0.0,
+        0.0
+      ],
+      "x": [
+        -8.0,
+        -3.0
+      ],
+      "y": [
+        2.0,
+        7.0
+      ]
+    },
+    "workspace_bounds": {
+      "x": [
+        -8.0,
+        3.0
+      ],
+      "y": [
+        -2.0,
+        8.0
+      ]
+    },
+    "action_low": [
+      -1.0,
+      -4.0
+    ],
+    "action_high": [
+      1.0,
+      4.0
+    ],
+    "obstacles": [
+      {
+        "r": 0.5,
+        "xo": -4.0,
+        "yo": 2.0
+      },
+      {
+        "r": 0.5,
+        "xo": -1.5,
+        "yo": 1.5
+      },
+      {
+        "r": 0.5,
+        "xo": -2.5,
+        "yo": 3.0
+      }
+    ],
+    "q_diag": [
+      10.0,
+      10.0,
+      10.0,
+      10.0
+    ],
+    "r_diag": [
+      1.0,
+      1.0
+    ],
+    "state_names": [
+      "x",
+      "y",
+      "theta",
+      "v"
+    ],
+    "disturbance_enabled": false,
+    "terminate_on_goal": false
+  },
+  "aggregate": {
+    "num_trials": 50,
+    "dataset_trials": 50,
+    "partial_benchmark": false,
+    "completed_trials": 50,
+    "failed_rollouts": 0,
+    "successes": 24,
+    "success_rate_percent": 48.0,
+    "collisions": 4,
+    "collision_rate_percent": 8.0,
+    "mean_ace_completed": 3.1172332286593183,
+    "mean_state_msd_completed": 0.26537785823275006,
+    "mean_control_msd_completed": 1.6233093583121672,
+    "mean_controller_ms": 3.4177396499842874,
+    "max_controller_ms": 10.481300007086247,
+    "rollout_wall_seconds": 34.89581369998632,
+    "total_elapsed_seconds": 35.72277259998373,
+    "elapsed_seconds_per_trial": 0.7144554519996745
+  },
+  "trials": [
+    {
+      "trial": 1,
+      "initial_state": [
+        -5.24,
+        4.11,
+        2.72,
+        0.0
+      ],
+      "final_state": [
+        -0.5545288584055854,
+        0.1011968144315318,
+        6.035981362812455,
+        0.6769156181253498
+      ],
+      "initial_distance_xy": 6.6595570423264645,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.5798452353295982,
+      "avg_state_msd": 0.2792750973123516,
+      "avg_control_msd": 4.451377174213654,
+      "quadratic_cost": 45720.069170019575,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.04173157225859514,
+      "mean_controller_ms": 3.4585695003625005,
+      "max_controller_ms": 4.666399996494874,
+      "failure_reason": null
+    },
+    {
+      "trial": 2,
+      "initial_state": [
+        -4.8151915633927285,
+        3.3489335688193513,
+        -2.8841484100105235,
+        0.0
+      ],
+      "final_state": [
+        -4.6475334370095815,
+        2.4697877045730623,
+        -0.8314506200635456,
+        9.223818777185108e-07
+      ],
+      "initial_distance_xy": 5.8652728700831664,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.948772684028067,
+      "avg_state_msd": 0.08037565444674954,
+      "avg_control_msd": 0.20733148547359767,
+      "quadratic_cost": 74444.17726642579,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.04372476015382454,
+      "mean_controller_ms": 3.386026000516722,
+      "max_controller_ms": 4.764399986015633,
+      "failure_reason": null
+    },
+    {
+      "trial": 3,
+      "initial_state": [
+        -4.9668211211641005,
+        5.647482804919992,
+        0.27410390540137985,
+        0.0
+      ],
+      "final_state": [
+        0.022853104135993473,
+        0.082832483228369,
+        0.04677159591631595,
+        -0.002172357341623072
+      ],
+      "initial_distance_xy": 7.520862588926139,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.1546295406223015,
+      "avg_state_msd": 0.3309981364604775,
+      "avg_control_msd": 1.5662745377055671,
+      "quadratic_cost": 34352.85971860535,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.13978724638115658,
+      "mean_controller_ms": 3.3605855010682717,
+      "max_controller_ms": 5.289900000207126,
+      "failure_reason": null
+    },
+    {
+      "trial": 4,
+      "initial_state": [
+        -3.324637881061159,
+        6.079267770607661,
+        -3.1243861495570098,
+        0.0
+      ],
+      "final_state": [
+        0.023183906794770195,
+        0.08285611026302747,
+        0.04691818363579122,
+        -0.0022815923730388817
+      ],
+      "initial_distance_xy": 6.928976379447103,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.15523979306662777,
+      "avg_state_msd": 0.35675316040278426,
+      "avg_control_msd": 1.8859207471031412,
+      "quadratic_cost": 32270.99472327541,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.14147532124576523,
+      "mean_controller_ms": 3.333494500548113,
+      "max_controller_ms": 5.255800002487376,
+      "failure_reason": null
+    },
+    {
+      "trial": 5,
+      "initial_state": [
+        -7.121721896987205,
+        6.315894611749433,
+        0.2605085298868297,
+        0.0
+      ],
+      "final_state": [
+        0.03099510673966647,
+        0.08287168520853098,
+        -0.06211907142005528,
+        0.0040158557705590615
+      ],
+      "initial_distance_xy": 9.51889949126224,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.1800017191388118,
+      "avg_state_msd": 0.45187490959070575,
+      "avg_control_msd": 1.544043569209438,
+      "quadratic_cost": 59413.63637271227,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.022958339065912048,
+      "mean_controller_ms": 3.689600999932736,
+      "max_controller_ms": 8.644799992907792,
+      "failure_reason": null
+    },
+    {
+      "trial": 6,
+      "initial_state": [
+        -6.501440547313076,
+        4.113436105988292,
+        -2.9636549119444626,
+        0.0
+      ],
+      "final_state": [
+        -0.044668268291172444,
+        0.02284004020012651,
+        -0.01837806836846928,
+        0.005480234324932117
+      ],
+      "initial_distance_xy": 7.693444338415316,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.09136661118470037,
+      "avg_state_msd": 0.3681768064504534,
+      "avg_control_msd": 0.587434415791069,
+      "quadratic_cost": 44328.95035804909,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.16447039405041275,
+      "mean_controller_ms": 3.3261799994215835,
+      "max_controller_ms": 6.106000015279278,
+      "failure_reason": null
+    },
+    {
+      "trial": 7,
+      "initial_state": [
+        -7.37858361750218,
+        5.3531220734681515,
+        0.9248189764942678,
+        0.0
+      ],
+      "final_state": [
+        0.02693231636605149,
+        0.08302234661795735,
+        0.04653719150532759,
+        -0.005258135322946764
+      ],
+      "initial_distance_xy": 9.115887896081409,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.16174998981228322,
+      "avg_state_msd": 0.45859096579126857,
+      "avg_control_msd": 1.6349459737248038,
+      "quadratic_cost": 56432.85219490793,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.09280209975807718,
+      "mean_controller_ms": 3.364065999776358,
+      "max_controller_ms": 5.875800008652732,
+      "failure_reason": null
+    },
+    {
+      "trial": 8,
+      "initial_state": [
+        -4.92307444259373,
+        3.9183877713094173,
+        3.124062163134476,
+        0.0
+      ],
+      "final_state": [
+        -4.558179629753124,
+        2.5730938399694745,
+        5.503436314909594,
+        3.5881996151508004e-06
+      ],
+      "initial_distance_xy": 6.292092234993599,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.911026050192206,
+      "avg_state_msd": 0.11927009999569567,
+      "avg_control_msd": 5.634703721040698,
+      "quadratic_cost": 76372.1210758567,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.03685559958753171,
+      "mean_controller_ms": 3.3981854996818583,
+      "max_controller_ms": 4.07439999980852,
+      "failure_reason": null
+    },
+    {
+      "trial": 9,
+      "initial_state": [
+        -3.0958233061188496,
+        5.427709922403474,
+        0.9453635139748178,
+        0.0
+      ],
+      "final_state": [
+        -0.004527301667775972,
+        0.06416547615938742,
+        -0.022882008295625658,
+        -0.0028692127614712536
+      ],
+      "initial_distance_xy": 6.2485323832453465,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.0944439988842603,
+      "avg_state_msd": 0.3932330422491654,
+      "avg_control_msd": 0.9680414307974907,
+      "quadratic_cost": 33025.45527637952,
+      "collided": false,
+      "minimum_obstacle_clearance": 1.0600167482685177,
+      "mean_controller_ms": 3.089135999325663,
+      "max_controller_ms": 4.629399976693094,
+      "failure_reason": null
+    },
+    {
+      "trial": 10,
+      "initial_state": [
+        -4.5577663471453,
+        3.944607119895519,
+        -2.292756278181666,
+        0.0
+      ],
+      "final_state": [
+        -0.07192870940449575,
+        0.012303346356267699,
+        -0.034490601087205926,
+        0.04786315187811828
+      ],
+      "initial_distance_xy": 6.027699345977753,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.16658580872608764,
+      "avg_state_msd": 0.21356606553165597,
+      "avg_control_msd": 0.7756414515720309,
+      "quadratic_cost": 27517.01887682717,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.03170505035164095,
+      "mean_controller_ms": 3.3069240000622813,
+      "max_controller_ms": 5.744499998399988,
+      "failure_reason": null
+    },
+    {
+      "trial": 11,
+      "initial_state": [
+        -4.3925582990295915,
+        4.626771612378629,
+        -1.1922854594059253,
+        0.0
+      ],
+      "final_state": [
+        -3.255838247749315,
+        3.2621226141805413,
+        -0.8169358264671837,
+        2.2768974303080273e-06
+      ],
+      "initial_distance_xy": 6.379779303666114,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.33489896529447,
+      "avg_state_msd": 0.06799555883289589,
+      "avg_control_msd": 0.1660521556719998,
+      "quadratic_cost": 60894.90264212155,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.031345425204516775,
+      "mean_controller_ms": 3.4127764996082988,
+      "max_controller_ms": 5.8117000153288245,
+      "failure_reason": null
+    },
+    {
+      "trial": 12,
+      "initial_state": [
+        -5.570823205841055,
+        6.4474391717450015,
+        2.7271758421328762,
+        0.0
+      ],
+      "final_state": [
+        -3.232184045668936,
+        3.3224605490138828,
+        5.4483139615656055,
+        9.847357869118169e-05
+      ],
+      "initial_distance_xy": 8.520771271668375,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.38961441387549,
+      "avg_state_msd": 0.3222839164532141,
+      "avg_control_msd": 3.3325925162317476,
+      "quadratic_cost": 83891.66284317257,
+      "collided": true,
+      "minimum_obstacle_clearance": -0.007327138864650751,
+      "mean_controller_ms": 3.558003501239,
+      "max_controller_ms": 5.0629000179469585,
+      "failure_reason": null
+    },
+    {
+      "trial": 13,
+      "initial_state": [
+        -6.211024016454649,
+        4.857649153648804,
+        -1.119227624750593,
+        0.0
+      ],
+      "final_state": [
+        -0.06551351892417626,
+        0.014345856932729464,
+        -0.029906480266609404,
+        0.03523086495697472
+      ],
+      "initial_distance_xy": 7.885022170731125,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.14499672108048983,
+      "avg_state_msd": 0.27657546035708214,
+      "avg_control_msd": 0.744576871563963,
+      "quadratic_cost": 38535.36967763315,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.028873955169081422,
+      "mean_controller_ms": 3.482894999033306,
+      "max_controller_ms": 5.009399988921359,
+      "failure_reason": null
+    },
+    {
+      "trial": 14,
+      "initial_state": [
+        -5.028499849001516,
+        3.689556127535666,
+        -0.6809779034588956,
+        0.0
+      ],
+      "final_state": [
+        -0.06523207578775427,
+        0.011948446421553134,
+        -0.029651669681677102,
+        0.03540755556896292
+      ],
+      "initial_distance_xy": 6.236877034994698,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.14223974745994744,
+      "avg_state_msd": 0.17875824772724433,
+      "avg_control_msd": 0.7481013543647699,
+      "quadratic_cost": 26541.092797579975,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.030944700775148548,
+      "mean_controller_ms": 3.3667360006074887,
+      "max_controller_ms": 5.189099989365786,
+      "failure_reason": null
+    },
+    {
+      "trial": 15,
+      "initial_state": [
+        -3.548628239976038,
+        3.1357879676668987,
+        0.7740076575247476,
+        0.0
+      ],
+      "final_state": [
+        -3.2900321861603135,
+        3.125893113805819,
+        -0.7782759596075961,
+        -1.9371509605694644e-08
+      ],
+      "initial_distance_xy": 4.73560223875696,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.194201278945238,
+      "avg_state_msd": 0.032238882730670285,
+      "avg_control_msd": 0.11614256013321199,
+      "quadratic_cost": 53226.187073073546,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.04827020943554439,
+      "mean_controller_ms": 3.4829374999389984,
+      "max_controller_ms": 4.327500006183982,
+      "failure_reason": null
+    },
+    {
+      "trial": 16,
+      "initial_state": [
+        -7.5799232820880755,
+        6.163220738266989,
+        1.803891867329022,
+        0.0
+      ],
+      "final_state": [
+        -1.5113014610885491,
+        0.5282834799668094,
+        5.740522003359749,
+        0.8745951205492017
+      ],
+      "initial_distance_xy": 9.76936675690626,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 3.4568433654243975,
+      "avg_state_msd": 0.4914236508218096,
+      "avg_control_msd": 9.759645952990725,
+      "quadratic_cost": 95632.6921963421,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.026999783430793456,
+      "mean_controller_ms": 3.6626809991139453,
+      "max_controller_ms": 5.059000017354265,
+      "failure_reason": null
+    },
+    {
+      "trial": 17,
+      "initial_state": [
+        -6.803152785035239,
+        6.382421154053519,
+        -2.7735988378314134,
+        0.0
+      ],
+      "final_state": [
+        -0.185014222631322,
+        0.02542855113518718,
+        -0.1328956021716648,
+        0.3480844721198081
+      ],
+      "initial_distance_xy": 9.328353960064048,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.691422848057982,
+      "avg_state_msd": 0.4479368262851574,
+      "avg_control_msd": 0.7322273802054897,
+      "quadratic_cost": 58416.70628294626,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.030104640456113163,
+      "mean_controller_ms": 3.5023124994768295,
+      "max_controller_ms": 4.86859999364242,
+      "failure_reason": null
+    },
+    {
+      "trial": 18,
+      "initial_state": [
+        -6.319414697271698,
+        2.7513973344741953,
+        -0.31202696181443246,
+        0.0
+      ],
+      "final_state": [
+        -0.04016266320577151,
+        0.021822091792117256,
+        -0.016178987504268664,
+        0.0027670542418483436
+      ],
+      "initial_distance_xy": 6.892400845006423,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.08093079674400577,
+      "avg_state_msd": 0.26563094511924196,
+      "avg_control_msd": 0.536578624185941,
+      "quadratic_cost": 26955.790729964556,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.18585575503879548,
+      "mean_controller_ms": 3.3573829996748827,
+      "max_controller_ms": 5.098699999507517,
+      "failure_reason": null
+    },
+    {
+      "trial": 19,
+      "initial_state": [
+        -4.018378648563528,
+        3.153211044968737,
+        -2.8147331790815286,
+        0.0
+      ],
+      "final_state": [
+        -3.9839223763495317,
+        2.7998383438100447,
+        -0.7304449098326894,
+        9.834766389595071e-08
+      ],
+      "initial_distance_xy": 5.107847575774367,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.51420572833993,
+      "avg_state_msd": 0.06285530702509229,
+      "avg_control_msd": 0.14699402871550102,
+      "quadratic_cost": 62422.685758169,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.047483678437347354,
+      "mean_controller_ms": 3.4759524998662528,
+      "max_controller_ms": 5.913800006965175,
+      "failure_reason": null
+    },
+    {
+      "trial": 20,
+      "initial_state": [
+        -5.977240800892359,
+        2.9925652225462764,
+        -2.5713744507739276,
+        0.0
+      ],
+      "final_state": [
+        -0.04042767962904771,
+        0.021316408058297605,
+        -0.016233451977368033,
+        0.0030355678871271056
+      ],
+      "initial_distance_xy": 6.684523483618393,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.08101310755184046,
+      "avg_state_msd": 0.3044891277177878,
+      "avg_control_msd": 0.4840587108448739,
+      "quadratic_cost": 29203.89428087505,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.22052704404990497,
+      "mean_controller_ms": 3.2542125006148126,
+      "max_controller_ms": 4.532699997071177,
+      "failure_reason": null
+    },
+    {
+      "trial": 21,
+      "initial_state": [
+        -5.098338070065747,
+        3.493480664094613,
+        1.0806756900855436,
+        0.0
+      ],
+      "final_state": [
+        -3.163526486860275,
+        3.4469152951761695,
+        -0.8418011348462574,
+        4.020333290320156e-06
+      ],
+      "initial_distance_xy": 6.180409228124353,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.452246937215992,
+      "avg_state_msd": 0.10633153864984096,
+      "avg_control_msd": 0.21656367441794935,
+      "quadratic_cost": 61965.83279529519,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.029448351577375464,
+      "mean_controller_ms": 3.4664760004670825,
+      "max_controller_ms": 8.051599987084046,
+      "failure_reason": null
+    },
+    {
+      "trial": 22,
+      "initial_state": [
+        -7.002422780158933,
+        6.710565552532489,
+        -0.8475378089720196,
+        0.0
+      ],
+      "final_state": [
+        -2.888060283852552,
+        3.6996321379842487,
+        -0.921754183680359,
+        9.603565558739525e-05
+      ],
+      "initial_distance_xy": 9.6987429508635,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.509542641172747,
+      "avg_state_msd": 0.27112106439875905,
+      "avg_control_msd": 0.2124576376899702,
+      "quadratic_cost": 89169.42520269047,
+      "collided": true,
+      "minimum_obstacle_clearance": -0.017127105128859066,
+      "mean_controller_ms": 3.5136679996503517,
+      "max_controller_ms": 5.246999993687496,
+      "failure_reason": null
+    },
+    {
+      "trial": 23,
+      "initial_state": [
+        -7.472523602148852,
+        5.145540757698546,
+        2.683891211730887,
+        0.0
+      ],
+      "final_state": [
+        -0.0738197040859197,
+        0.024378743773635594,
+        6.245722211689222,
+        0.05107894563116097
+      ],
+      "initial_distance_xy": 9.072772380800071,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.18674048898108037,
+      "avg_state_msd": 0.4575134792762877,
+      "avg_control_msd": 3.387556604266609,
+      "quadratic_cost": 76257.34017822778,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.0718455685427648,
+      "mean_controller_ms": 3.3613694991800003,
+      "max_controller_ms": 5.356599984224886,
+      "failure_reason": null
+    },
+    {
+      "trial": 24,
+      "initial_state": [
+        -5.79811422642108,
+        6.772952468453687,
+        -0.0006546219069853976,
+        0.0
+      ],
+      "final_state": [
+        0.024120740435843793,
+        0.08311776219425682,
+        0.048148689105685316,
+        -0.0026371266983914628
+      ],
+      "initial_distance_xy": 8.91577331040664,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.15802431843417739,
+      "avg_state_msd": 0.39334792662988244,
+      "avg_control_msd": 1.5506878693862007,
+      "quadratic_cost": 48786.90688580731,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.13136993335881708,
+      "mean_controller_ms": 3.3083275001263246,
+      "max_controller_ms": 4.6390999923460186,
+      "failure_reason": null
+    },
+    {
+      "trial": 25,
+      "initial_state": [
+        -5.873856875754623,
+        5.1010672600768885,
+        3.1107830873305495,
+        0.0
+      ],
+      "final_state": [
+        -0.4468823381262503,
+        0.06962167747981515,
+        6.079756891968339,
+        0.605244906386361
+      ],
+      "initial_distance_xy": 7.779658205132034,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.325177337203674,
+      "avg_state_msd": 0.3517254063984542,
+      "avg_control_msd": 5.60419380037505,
+      "quadratic_cost": 46933.50803304034,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.025852091785422027,
+      "mean_controller_ms": 3.3887044999573845,
+      "max_controller_ms": 10.481300007086247,
+      "failure_reason": null
+    },
+    {
+      "trial": 26,
+      "initial_state": [
+        -3.2552816253111736,
+        4.30022569654548,
+        1.619358094077417,
+        0.0
+      ],
+      "final_state": [
+        -2.2330431890298237,
+        3.7541491942053162,
+        5.276343244832337,
+        7.048249244584894e-07
+      ],
+      "initial_distance_xy": 5.393403331971253,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 6.9940351504073135,
+      "avg_state_msd": 0.106218689569948,
+      "avg_control_msd": 1.5384393349327008,
+      "quadratic_cost": 59012.54550606609,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.04923866899201823,
+      "mean_controller_ms": 3.488554000359727,
+      "max_controller_ms": 7.827499997802079,
+      "failure_reason": null
+    },
+    {
+      "trial": 27,
+      "initial_state": [
+        -5.512886522561905,
+        4.646560800983853,
+        1.7956445157270178,
+        0.0
+      ],
+      "final_state": [
+        0.029079720442953202,
+        0.08298009765572213,
+        0.012283797117252505,
+        -0.016620905883610457
+      ],
+      "initial_distance_xy": 7.209885234030039,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.1409645210995383,
+      "avg_state_msd": 0.37676204491246595,
+      "avg_control_msd": 1.4875481365950571,
+      "quadratic_cost": 48489.378115796666,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.15924832977189995,
+      "mean_controller_ms": 3.2839039999817032,
+      "max_controller_ms": 6.438100012019277,
+      "failure_reason": null
+    },
+    {
+      "trial": 28,
+      "initial_state": [
+        -5.926720753221646,
+        5.672417858943646,
+        1.3266498287008082,
+        0.0
+      ],
+      "final_state": [
+        0.02449261298686062,
+        0.08343596654940336,
+        0.04945802331830203,
+        -0.002907413186039938
+      ],
+      "initial_distance_xy": 8.2038005371371,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.16029401604060595,
+      "avg_state_msd": 0.4141624536231267,
+      "avg_control_msd": 1.4001057129433905,
+      "quadratic_cost": 49906.96172425772,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.13358103764403995,
+      "mean_controller_ms": 3.3323174994438887,
+      "max_controller_ms": 4.901499982224777,
+      "failure_reason": null
+    },
+    {
+      "trial": 29,
+      "initial_state": [
+        -3.339701566933109,
+        2.574663166404526,
+        1.43894441873588,
+        0.0
+      ],
+      "final_state": [
+        -3.2016993243224765,
+        2.615789070151005,
+        -0.6977360876318217,
+        4.470348364006516e-08
+      ],
+      "initial_distance_xy": 4.2169298045634624,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 6.515224526808787,
+      "avg_state_msd": 0.04267934476657865,
+      "avg_control_msd": 0.06309143895761758,
+      "quadratic_cost": 44195.056055868925,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.0490742877632252,
+      "mean_controller_ms": 3.480229000269901,
+      "max_controller_ms": 4.433399997651577,
+      "failure_reason": null
+    },
+    {
+      "trial": 30,
+      "initial_state": [
+        -3.3628803568772003,
+        6.839630949623232,
+        -3.049190214308483,
+        0.0
+      ],
+      "final_state": [
+        0.022368098516600883,
+        0.08314654168627146,
+        0.0480226102776493,
+        -0.0020889666746366814
+      ],
+      "initial_distance_xy": 7.621647841622868,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.15562621715515834,
+      "avg_state_msd": 0.3835949333974481,
+      "avg_control_msd": 1.31504653414936,
+      "quadratic_cost": 37149.50599695085,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.13243481131574875,
+      "mean_controller_ms": 3.3030280003731605,
+      "max_controller_ms": 5.057300004409626,
+      "failure_reason": null
+    },
+    {
+      "trial": 31,
+      "initial_state": [
+        -3.681799548772121,
+        6.905975200331722,
+        2.8727362828245457,
+        0.0
+      ],
+      "final_state": [
+        0.023491451602993558,
+        0.08313795612274892,
+        6.331332061273132,
+        -0.002440667798510045
+      ],
+      "initial_distance_xy": 7.826119177787631,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.15721682961779812,
+      "avg_state_msd": 0.4312100912128796,
+      "avg_control_msd": 6.348839907503265,
+      "quadratic_cost": 42024.662408035976,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.13288282255762873,
+      "mean_controller_ms": 3.421055001526838,
+      "max_controller_ms": 5.895999987842515,
+      "failure_reason": null
+    },
+    {
+      "trial": 32,
+      "initial_state": [
+        -7.25617993883751,
+        6.8631440691147745,
+        2.4500373544500818,
+        0.0
+      ],
+      "final_state": [
+        -3.269071827391297,
+        3.221133711817768,
+        5.473070122078407,
+        0.00032513455953487165
+      ],
+      "initial_distance_xy": 9.987737172063213,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.300645858869779,
+      "avg_state_msd": 0.43835242642754424,
+      "avg_control_msd": 3.39269555178731,
+      "quadratic_cost": 105561.4989650133,
+      "collided": true,
+      "minimum_obstacle_clearance": -0.02501267025861298,
+      "mean_controller_ms": 3.67091449938016,
+      "max_controller_ms": 4.852099984418601,
+      "failure_reason": null
+    },
+    {
+      "trial": 33,
+      "initial_state": [
+        -3.8881308622846475,
+        4.399939619039161,
+        -1.6815505391256964,
+        0.0
+      ],
+      "final_state": [
+        -3.2722831079953743,
+        3.208754422303254,
+        -0.8028109730782527,
+        8.404254916396594e-07
+      ],
+      "initial_distance_xy": 5.871714421993021,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.283849343802373,
+      "avg_state_msd": 0.05475447831221819,
+      "avg_control_msd": 0.17112861426020268,
+      "quadratic_cost": 58457.7203379055,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.038847251962054186,
+      "mean_controller_ms": 3.464204500633059,
+      "max_controller_ms": 5.487100017489865,
+      "failure_reason": null
+    },
+    {
+      "trial": 34,
+      "initial_state": [
+        -3.990597106408461,
+        6.617650798917348,
+        -1.4694468369271578,
+        0.0
+      ],
+      "final_state": [
+        0.02220417687923076,
+        0.08330141660147519,
+        0.04865005492374795,
+        -0.0020715756254495654
+      ],
+      "initial_distance_xy": 7.727753060371882,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.15622722402990347,
+      "avg_state_msd": 0.3185981571100173,
+      "avg_control_msd": 1.304956275431462,
+      "quadratic_cost": 34350.28560428862,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.13437421880103484,
+      "mean_controller_ms": 3.4085545013658702,
+      "max_controller_ms": 5.148700001882389,
+      "failure_reason": null
+    },
+    {
+      "trial": 35,
+      "initial_state": [
+        -5.305327961889065,
+        4.213764144872657,
+        2.7081616669127744,
+        0.0
+      ],
+      "final_state": [
+        -0.5875514411987108,
+        0.10967755393275472,
+        6.022611656918002,
+        0.6915115463198163
+      ],
+      "initial_distance_xy": 6.775124578324474,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.649314191712866,
+      "avg_state_msd": 0.28643954188545784,
+      "avg_control_msd": 4.85087812204791,
+      "quadratic_cost": 47073.46475503024,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.040322874703429434,
+      "mean_controller_ms": 3.471759499370819,
+      "max_controller_ms": 5.023000005166978,
+      "failure_reason": null
+    },
+    {
+      "trial": 36,
+      "initial_state": [
+        -4.210244988217859,
+        4.56379361631039,
+        2.696141335360494,
+        0.0
+      ],
+      "final_state": [
+        -0.05903590565851186,
+        0.016664998028955814,
+        6.257029532726636,
+        0.024789268895984116
+      ],
+      "initial_distance_xy": 6.20921694202168,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.12664594703640197,
+      "avg_state_msd": 0.28195812532277537,
+      "avg_control_msd": 2.9248977599389043,
+      "quadratic_cost": 33302.20565521697,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.03997044925899673,
+      "mean_controller_ms": 3.536036499135662,
+      "max_controller_ms": 5.982999980915338,
+      "failure_reason": null
+    },
+    {
+      "trial": 37,
+      "initial_state": [
+        -7.669587516379626,
+        6.2065863980619165,
+        -2.7225669703686637,
+        0.0
+      ],
+      "final_state": [
+        -0.5223707787063241,
+        0.08865809905352448,
+        -0.22799168962594388,
+        0.6519542921800168
+      ],
+      "initial_distance_xy": 9.866320863828289,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.4909748595658092,
+      "avg_state_msd": 0.47232534529212256,
+      "avg_control_msd": 0.7391272894127882,
+      "quadratic_cost": 69666.19237806412,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.027572362305256837,
+      "mean_controller_ms": 3.434876500250539,
+      "max_controller_ms": 4.713400005130097,
+      "failure_reason": null
+    },
+    {
+      "trial": 38,
+      "initial_state": [
+        -6.278450105979374,
+        4.151493659739167,
+        2.9283544182160153,
+        0.0
+      ],
+      "final_state": [
+        -0.047993732904872445,
+        0.022196139171129933,
+        6.263364472760556,
+        0.008254306204617801
+      ],
+      "initial_distance_xy": 7.52687420780545,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.09826501269965048,
+      "avg_state_msd": 0.37364934295355173,
+      "avg_control_msd": 2.5848553734448405,
+      "quadratic_cost": 49069.56255654429,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.14118580294609429,
+      "mean_controller_ms": 3.361142999783624,
+      "max_controller_ms": 5.0814999849535525,
+      "failure_reason": null
+    },
+    {
+      "trial": 39,
+      "initial_state": [
+        -5.188840788857715,
+        3.2943229658546613,
+        -1.6230993576900703,
+        0.0
+      ],
+      "final_state": [
+        -4.675335160612268,
+        2.4288613511658794,
+        -0.8507790916673814,
+        5.453824996144489e-07
+      ],
+      "initial_distance_xy": 6.146269806595787,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.954976148828028,
+      "avg_state_msd": 0.03924746475335448,
+      "avg_control_msd": 0.15114240882800475,
+      "quadratic_cost": 74209.72573924465,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.04134961754561861,
+      "mean_controller_ms": 3.3745029981946573,
+      "max_controller_ms": 4.960899997968227,
+      "failure_reason": null
+    },
+    {
+      "trial": 40,
+      "initial_state": [
+        -3.559408396704101,
+        3.1293471420866217,
+        -2.3589923559454644,
+        0.0
+      ],
+      "final_state": [
+        -0.04302184328136391,
+        0.013102357579970426,
+        -0.016761931288000406,
+        0.007285098615103462
+      ],
+      "initial_distance_xy": 4.739430521720238,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.0801712307644382,
+      "avg_state_msd": 0.1662482209028605,
+      "avg_control_msd": 0.6420671247550648,
+      "quadratic_cost": 17075.406023763913,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.03843342814082984,
+      "mean_controller_ms": 3.2500905005144887,
+      "max_controller_ms": 5.041099997470155,
+      "failure_reason": null
+    },
+    {
+      "trial": 41,
+      "initial_state": [
+        -6.558346214962112,
+        4.930615324063664,
+        0.33986064851304176,
+        0.0
+      ],
+      "final_state": [
+        -2.837778777982632,
+        3.725205723099583,
+        -0.9303170555376872,
+        3.168284893030223e-05
+      ],
+      "initial_distance_xy": 8.205051648173782,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.493333239468832,
+      "avg_state_msd": 0.20594424642479392,
+      "avg_control_msd": 0.2739542210715409,
+      "quadratic_cost": 74865.76665204331,
+      "collided": true,
+      "minimum_obstacle_clearance": -0.0010872781975681534,
+      "mean_controller_ms": 3.531047999713337,
+      "max_controller_ms": 5.1515999948605895,
+      "failure_reason": null
+    },
+    {
+      "trial": 42,
+      "initial_state": [
+        -3.9514461204361115,
+        4.802379760030929,
+        -1.3293887167967184,
+        0.0
+      ],
+      "final_state": [
+        -3.0326558111112156,
+        3.5968897192229488,
+        -0.8902326233531107,
+        1.3589859010686177e-06
+      ],
+      "initial_distance_xy": 6.21906566955715,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.519779512673176,
+      "avg_state_msd": 0.05728614045022257,
+      "avg_control_msd": 0.1547293596485886,
+      "quadratic_cost": 62188.23353294428,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.0338903412202457,
+      "mean_controller_ms": 3.4542789991246536,
+      "max_controller_ms": 5.4530999914277345,
+      "failure_reason": null
+    },
+    {
+      "trial": 43,
+      "initial_state": [
+        -5.935518286595537,
+        6.090604854854552,
+        0.7948635459390618,
+        0.0
+      ],
+      "final_state": [
+        0.023688556017475163,
+        0.08305503987723445,
+        0.04782574395982079,
+        -0.0024849563371385705
+      ],
+      "initial_distance_xy": 8.504460290252865,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.15705429619166897,
+      "avg_state_msd": 0.40644716927417746,
+      "avg_control_msd": 1.2917361006160595,
+      "quadratic_cost": 46021.58004607271,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.1421215719363642,
+      "mean_controller_ms": 3.353323501214618,
+      "max_controller_ms": 5.226200009929016,
+      "failure_reason": null
+    },
+    {
+      "trial": 44,
+      "initial_state": [
+        -3.204611786512789,
+        3.8470220554584045,
+        0.33056786989587605,
+        0.0
+      ],
+      "final_state": [
+        -2.824330199627775,
+        3.7313068948635575,
+        -0.9327927246301699,
+        2.980232247497695e-08
+      ],
+      "initial_distance_xy": 5.006906769397658,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.4884298489238255,
+      "avg_state_msd": 0.025573439528156397,
+      "avg_control_msd": 0.16983315471509985,
+      "quadratic_cost": 57255.10545305605,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.04805132161921444,
+      "mean_controller_ms": 3.4838639985537156,
+      "max_controller_ms": 5.015600007027388,
+      "failure_reason": null
+    },
+    {
+      "trial": 45,
+      "initial_state": [
+        -5.030378991934159,
+        6.2414560413753,
+        -2.227555455872748,
+        0.0
+      ],
+      "final_state": [
+        -2.9375357013269494,
+        3.669755715872006,
+        -0.9145966332048874,
+        2.1097064018026108e-05
+      ],
+      "initial_distance_xy": 8.016263862854862,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.521909147467861,
+      "avg_state_msd": 0.20231812129053064,
+      "avg_control_msd": 0.2976472590342845,
+      "quadratic_cost": 74010.79818699852,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.0032621010664184436,
+      "mean_controller_ms": 3.5623275001125876,
+      "max_controller_ms": 5.110999976750463,
+      "failure_reason": null
+    },
+    {
+      "trial": 46,
+      "initial_state": [
+        -5.967448316259366,
+        6.549794808311485,
+        -2.870995412112112,
+        0.0
+      ],
+      "final_state": [
+        -0.30179456191554616,
+        0.04639922527897747,
+        -0.18157894424804694,
+        0.5111520757898695
+      ],
+      "initial_distance_xy": 8.860601076575495,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.0409248072324402,
+      "avg_state_msd": 0.4189042873548958,
+      "avg_control_msd": 0.9020507322301898,
+      "quadratic_cost": 54949.81032198841,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.0029581553324995458,
+      "mean_controller_ms": 3.5802940010034945,
+      "max_controller_ms": 5.640899995341897,
+      "failure_reason": null
+    },
+    {
+      "trial": 47,
+      "initial_state": [
+        -3.88646859909249,
+        4.076920186856123,
+        2.0722195545486475,
+        0.0
+      ],
+      "final_state": [
+        -3.0564845900139233,
+        3.574740983584434,
+        5.39680918925136,
+        1.1473894120627179e-06
+      ],
+      "initial_distance_xy": 5.632576353830182,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.5176028389159955,
+      "avg_state_msd": 0.08923981654201948,
+      "avg_control_msd": 0.8886529108475436,
+      "quadratic_cost": 64560.45921997422,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.04971160114599471,
+      "mean_controller_ms": 3.394140499585774,
+      "max_controller_ms": 4.749800020363182,
+      "failure_reason": null
+    },
+    {
+      "trial": 48,
+      "initial_state": [
+        -4.736927118316808,
+        3.369245492997786,
+        1.2733005128390884,
+        0.0
+      ],
+      "final_state": [
+        -3.143935451251189,
+        3.4747080152011196,
+        -0.849038898287361,
+        2.9951333999424885e-06
+      ],
+      "initial_distance_xy": 5.8129419157885165,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 7.4676853598730695,
+      "avg_state_msd": 0.09222407808639434,
+      "avg_control_msd": 0.20744366250521523,
+      "quadratic_cost": 60778.32561768419,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.03533036047249305,
+      "mean_controller_ms": 3.3642945004976355,
+      "max_controller_ms": 4.318099992815405,
+      "failure_reason": null
+    },
+    {
+      "trial": 49,
+      "initial_state": [
+        -3.280992865289546,
+        2.634085511306239,
+        2.2919696260401583,
+        0.0
+      ],
+      "final_state": [
+        -0.07252489899202061,
+        0.046210524489888105,
+        -0.035491324409882744,
+        0.0367442735005168
+      ],
+      "initial_distance_xy": 4.207531421505293,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.19097102139230826,
+      "avg_state_msd": 0.1527904061270799,
+      "avg_control_msd": 0.41452839410348746,
+      "quadratic_cost": 16755.63470473957,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.08773236848526111,
+      "mean_controller_ms": 3.1578064999484923,
+      "max_controller_ms": 4.204500000923872,
+      "failure_reason": null
+    },
+    {
+      "trial": 50,
+      "initial_state": [
+        -7.7026792419983074,
+        3.903852541554447,
+        -0.44124258698566,
+        0.0
+      ],
+      "final_state": [
+        -0.045294880786212556,
+        0.023788675153839037,
+        -0.019056803746113276,
+        0.005639795935711624
+      ],
+      "initial_distance_xy": 8.635469423911633,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.0937801556218765,
+      "avg_state_msd": 0.34962326946215494,
+      "avg_control_msd": 0.6559282881729872,
+      "quadratic_cost": 45733.31039707545,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.10019169327100774,
+      "mean_controller_ms": 3.4172314996249042,
+      "max_controller_ms": 5.001200013794005,
+      "failure_reason": null
+    }
+  ]
+}

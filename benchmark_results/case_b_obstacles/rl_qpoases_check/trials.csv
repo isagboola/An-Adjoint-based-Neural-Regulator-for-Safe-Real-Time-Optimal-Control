@@ -1,0 +1,2 @@
+trial,success,completed,collided,steps,ace,avg_state_msd,minimum_obstacle_clearance,avg_control_msd,quadratic_cost,mean_controller_ms,failure_reason,initial_x,initial_y,initial_theta,initial_v,final_x,final_y,final_theta,final_v
+1,False,True,False,200,1.5775029951532584,0.27934667132744895,0.0417425566709031,4.451715799729502,45713.6167195667,0.9084790004999377,,-5.24,4.11,2.72,0.0,-0.5533877077854673,0.10093187522823842,6.036412991954705,0.6764110969146715

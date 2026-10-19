@@ -1,0 +1,205 @@
+{
+  "controller": "RL",
+  "controller_metadata": {
+    "checkpoint": "C:\\Users\\agboola\\OneDrive - Umich\\Desktop\\Als Lab\\Fall'26\\ACC code\\ANR_with_disturbances v2\\RL_SAC_HOCBF\\output\\Unicycle-run5\\actor.pkl",
+    "resume": "5",
+    "policy": "GaussianPolicy deterministic tanh(mean)",
+    "device": "cpu",
+    "plant_integration": "forward Euler (existing RL environment)",
+    "cbf_mode": "baseline",
+    "qp_solver": "qpoases",
+    "obstacles": [
+      {
+        "r": 0.5,
+        "xo": -4.0,
+        "yo": 2.0
+      },
+      {
+        "r": 0.5,
+        "xo": -1.5,
+        "yo": 1.5
+      },
+      {
+        "r": 0.5,
+        "xo": -2.5,
+        "yo": 3.0
+      }
+    ],
+    "robot_radius": 0.25,
+    "safety_margin": 0.05,
+    "terminate_on_goal": false,
+    "timing_scope": "observation, actor inference, HOCBF-QP, action transfer and bounds; excludes plant",
+    "inference_warmup_calls": 1,
+    "disturbance_enabled": false,
+    "disturbance_velocity_std": 0.3,
+    "disturbance_seed": 10,
+    "disturbance_distribution": "iid Normal(0, disturbance_velocity_std^2)",
+    "disturbance_assignment": "SeedSequence([disturbance_seed, one-based trial number])",
+    "disturbance_location": "plant velocity derivative: v_dot = a + d_v"
+  },
+  "dataset_path": "C:\\Users\\agboola\\OneDrive - Umich\\Desktop\\Als Lab\\Fall'26\\ACC code\\ANR_with_disturbances v2\\benchmark data\\case_b_obstacle_benchmark.csv",
+  "dataset_id": "33e04d28f4c3e56210df0cd0930b761ee0191041ba36607ea47d7534b9f11241",
+  "benchmark_metadata": {
+    "schema_version": 1,
+    "num_trials": 50,
+    "random_seed": 0,
+    "sample_attempts": 54,
+    "rejected_workspace": 4,
+    "rejected_obstacle": 1,
+    "dt": 0.05,
+    "success_threshold": 0.6,
+    "robot_radius": 0.25,
+    "safety_margin": 0.05,
+    "terminal_weight": 50.0,
+    "dataset_id": "33e04d28f4c3e56210df0cd0930b761ee0191041ba36607ea47d7534b9f11241",
+    "case": "b",
+    "scenario": "three_fixed_obstacles",
+    "random_generator": "numpy.random.default_rng/PCG64",
+    "success_rule": "complete rollout, wrapped-angle ACE <= threshold, and no physical obstacle collision",
+    "simulation_steps": 200,
+    "goal": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sampling_bounds": {
+      "theta": [
+        -3.141592653589793,
+        3.141592653589793
+      ],
+      "v": [
+        0.0,
+        0.0
+      ],
+      "x": [
+        -8.0,
+        -3.0
+      ],
+      "y": [
+        2.0,
+        7.0
+      ]
+    },
+    "training_bounds": {
+      "theta": [
+        -3.141592653589793,
+        3.141592653589793
+      ],
+      "v": [
+        0.0,
+        0.0
+      ],
+      "x": [
+        -8.0,
+        -3.0
+      ],
+      "y": [
+        2.0,
+        7.0
+      ]
+    },
+    "workspace_bounds": {
+      "x": [
+        -8.0,
+        3.0
+      ],
+      "y": [
+        -2.0,
+        8.0
+      ]
+    },
+    "action_low": [
+      -1.0,
+      -4.0
+    ],
+    "action_high": [
+      1.0,
+      4.0
+    ],
+    "obstacles": [
+      {
+        "r": 0.5,
+        "xo": -4.0,
+        "yo": 2.0
+      },
+      {
+        "r": 0.5,
+        "xo": -1.5,
+        "yo": 1.5
+      },
+      {
+        "r": 0.5,
+        "xo": -2.5,
+        "yo": 3.0
+      }
+    ],
+    "q_diag": [
+      10.0,
+      10.0,
+      10.0,
+      10.0
+    ],
+    "r_diag": [
+      1.0,
+      1.0
+    ],
+    "state_names": [
+      "x",
+      "y",
+      "theta",
+      "v"
+    ],
+    "disturbance_enabled": false,
+    "terminate_on_goal": false
+  },
+  "aggregate": {
+    "num_trials": 1,
+    "dataset_trials": 50,
+    "partial_benchmark": true,
+    "completed_trials": 1,
+    "failed_rollouts": 0,
+    "successes": 0,
+    "success_rate_percent": 0.0,
+    "collisions": 0,
+    "collision_rate_percent": 0.0,
+    "mean_ace_completed": 1.5775029951532584,
+    "mean_state_msd_completed": 0.27934667132744895,
+    "mean_control_msd_completed": 4.451715799729502,
+    "mean_controller_ms": 0.9084790004999377,
+    "max_controller_ms": 2.8651999891735613,
+    "rollout_wall_seconds": 0.19575360001181252,
+    "total_elapsed_seconds": 0.1991223000222817,
+    "elapsed_seconds_per_trial": 0.1991223000222817
+  },
+  "trials": [
+    {
+      "trial": 1,
+      "initial_state": [
+        -5.24,
+        4.11,
+        2.72,
+        0.0
+      ],
+      "final_state": [
+        -0.5533877077854673,
+        0.10093187522823842,
+        6.036412991954705,
+        0.6764110969146715
+      ],
+      "initial_distance_xy": 6.6595570423264645,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.5775029951532584,
+      "avg_state_msd": 0.27934667132744895,
+      "avg_control_msd": 4.451715799729502,
+      "quadratic_cost": 45713.6167195667,
+      "collided": false,
+      "minimum_obstacle_clearance": 0.0417425566709031,
+      "mean_controller_ms": 0.9084790004999377,
+      "max_controller_ms": 2.8651999891735613,
+      "failure_reason": null
+    }
+  ]
+}

@@ -1,0 +1,2729 @@
+{
+  "controller": "RL",
+  "controller_metadata": {
+    "checkpoint": "C:\\Users\\agboola\\OneDrive - Umich\\Desktop\\Als Lab\\Fall'26\\ACC code\\ANR_with_disturbances v2\\RL_SAC_HOCBF\\output\\Unicycle-run4\\actor.pkl",
+    "resume": "4",
+    "policy": "GaussianPolicy deterministic tanh(mean)",
+    "actor_observation": "zero-reference error coordinates: [ex, ey, cos(etheta), sin(etheta), ev, ex, ey, etheta, ev]",
+    "device": "cpu",
+    "plant_integration": "forward Euler (existing RL environment)",
+    "cbf_mode": "off",
+    "terminate_on_goal": false,
+    "timing_scope": "observation, actor inference, action transfer and bounds; excludes plant",
+    "inference_warmup_calls": 1,
+    "disturbance_enabled": true,
+    "disturbance_velocity_std": 0.3,
+    "disturbance_seed": 10,
+    "disturbance_distribution": "iid Normal(0, disturbance_velocity_std^2)",
+    "disturbance_assignment": "SeedSequence([disturbance_seed, one-based trial number])",
+    "disturbance_location": "plant velocity derivative: v_dot = a + d_v"
+  },
+  "dataset_path": "C:\\Users\\agboola\\OneDrive - Umich\\Desktop\\Als Lab\\Fall'26\\ACC code\\ANR_with_disturbances v2\\benchmark data\\case_c_benchmark.csv",
+  "dataset_id": "51719af18236288eb0d9c5af2fa2f3d563443c8575cf6a72bd9bb05381206945",
+  "benchmark_metadata": {
+    "dataset_id": "51719af18236288eb0d9c5af2fa2f3d563443c8575cf6a72bd9bb05381206945",
+    "schema_version": 1,
+    "case": "c",
+    "state_names": [
+      "x",
+      "y",
+      "theta",
+      "v"
+    ],
+    "num_trials": 100,
+    "random_seed": 2026,
+    "random_generator": "numpy.random.RandomState/MT19937",
+    "goal": [
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "sampling_bounds": {
+      "x": [
+        -6.0,
+        6.0
+      ],
+      "y": [
+        -6.0,
+        6.0
+      ],
+      "theta": [
+        -2.0,
+        2.0
+      ],
+      "v": [
+        0.0,
+        0.0
+      ]
+    },
+    "training_bounds": {
+      "x": [
+        -2.0,
+        2.0
+      ],
+      "y": [
+        -2.0,
+        2.0
+      ],
+      "theta": [
+        -2.0,
+        2.0
+      ],
+      "v": [
+        -2.0,
+        2.0
+      ]
+    },
+    "exclusion_rule": "outside closed training position box in physical coordinates",
+    "minimum_distance_to_goal": 0.5,
+    "sample_attempts": 113,
+    "rejected_training": 14,
+    "rejected_distance": 0,
+    "dt": 0.05,
+    "simulation_steps": 200,
+    "success_threshold": 0.6,
+    "success_rule": "complete rollout and sum(abs(final error)), with wrapped theta, <= threshold",
+    "action_low": [
+      -1.0,
+      -4.0
+    ],
+    "action_high": [
+      1.0,
+      4.0
+    ],
+    "obstacles": [],
+    "disturbance_enabled": false,
+    "terminate_on_goal": false,
+    "q_diag": [
+      10.0,
+      10.0,
+      10.0,
+      10.0
+    ],
+    "r_diag": [
+      1.0,
+      1.0
+    ],
+    "terminal_weight": 50.0
+  },
+  "aggregate": {
+    "num_trials": 100,
+    "dataset_trials": 100,
+    "partial_benchmark": false,
+    "completed_trials": 100,
+    "failed_rollouts": 0,
+    "successes": 17,
+    "success_rate_percent": 17.0,
+    "mean_ace_completed": 1.929686993809514,
+    "mean_state_msd_completed": 0.790768369994531,
+    "mean_control_msd_completed": 21.256142728752437,
+    "mean_controller_ms": 0.1993432947754627,
+    "max_controller_ms": 1.0194999631494284,
+    "rollout_wall_seconds": 5.2454648000421,
+    "total_elapsed_seconds": 6.333559899998363,
+    "elapsed_seconds_per_trial": 0.06333559899998363
+  },
+  "trials": [
+    {
+      "trial": 1,
+      "initial_state": [
+        -5.24,
+        4.11,
+        2.72,
+        0.0
+      ],
+      "final_state": [
+        1.4500194772278159,
+        1.6727621927239162,
+        6.284713583001872,
+        -0.029887760182987326
+      ],
+      "initial_distance_xy": 6.972065691027302,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.1541977059570045,
+      "avg_state_msd": 0.8575576574840753,
+      "avg_control_msd": 18.278237680431044,
+      "quadratic_cost": 37001.381848648445,
+      "mean_controller_ms": 0.2045820013154298,
+      "max_controller_ms": 0.7090999861247838,
+      "failure_reason": null
+    },
+    {
+      "trial": 2,
+      "initial_state": [
+        -3.3678523808769247,
+        -1.0438591574559934,
+        1.9065419126412047,
+        0.0
+      ],
+      "final_state": [
+        0.5552974430940801,
+        0.9516119984634084,
+        0.8078578410954835,
+        0.026712542774231955
+      ],
+      "initial_distance_xy": 4.822395118263221,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.327660942312227,
+      "avg_state_msd": 0.2901233605584568,
+      "avg_control_msd": 6.376654628165579,
+      "quadratic_cost": 12351.801630246315,
+      "mean_controller_ms": 0.22118099936051294,
+      "max_controller_ms": 0.44109998270869255,
+      "failure_reason": null
+    },
+    {
+      "trial": 3,
+      "initial_state": [
+        -0.24852168383782125,
+        5.850605930852039,
+        -1.2074356439243275,
+        0.0
+      ],
+      "final_state": [
+        1.3761013806944273,
+        1.6027651904113855,
+        -0.0034314506639931183,
+        0.02231726757476358
+      ],
+      "initial_distance_xy": 5.008710841267462,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.0046152893445695,
+      "avg_state_msd": 0.6044143546412455,
+      "avg_control_msd": 15.533991200364119,
+      "quadratic_cost": 18541.994257534014,
+      "mean_controller_ms": 0.22853649978060275,
+      "max_controller_ms": 0.3548000240698457,
+      "failure_reason": null
+    },
+    {
+      "trial": 4,
+      "initial_state": [
+        0.6990013783902995,
+        3.398753621709133,
+        -0.790093641521803,
+        0.0
+      ],
+      "final_state": [
+        1.4399572176157056,
+        1.672267104263068,
+        0.0030053129329599133,
+        -0.007737750381078441
+      ],
+      "initial_distance_xy": 2.417564706036557,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.122967385192812,
+      "avg_state_msd": 0.2751348693872548,
+      "avg_control_msd": 13.90123032188903,
+      "quadratic_cost": 4394.204373619705,
+      "mean_controller_ms": 0.21618849918013439,
+      "max_controller_ms": 0.35879999632015824,
+      "failure_reason": null
+    },
+    {
+      "trial": 5,
+      "initial_state": [
+        -2.448392223714925,
+        4.729061532173999,
+        -1.8072995891485895,
+        0.0
+      ],
+      "final_state": [
+        1.4638570795590238,
+        1.6835520601641316,
+        -0.001815495009633431,
+        0.0035784588204880244
+      ],
+      "initial_distance_xy": 5.079105121900654,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.152803093553277,
+      "avg_state_msd": 0.4063809910031158,
+      "avg_control_msd": 15.086263901626879,
+      "quadratic_cost": 13782.277402721482,
+      "mean_controller_ms": 0.19205399585189298,
+      "max_controller_ms": 0.3630000283010304,
+      "failure_reason": null
+    },
+    {
+      "trial": 6,
+      "initial_state": [
+        -5.632883189493391,
+        -4.543134736920139,
+        -1.0723745204560666,
+        0.0
+      ],
+      "final_state": [
+        -4.300545408369591,
+        -5.206384324654492,
+        -40.615969965612166,
+        -0.7798918251108289
+      ],
+      "initial_distance_xy": 8.644158843815559,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 15.203679680669559,
+      "avg_state_msd": 4.238715140642427,
+      "avg_control_msd": 21.811001649871926,
+      "quadratic_cost": 188708.68181494594,
+      "mean_controller_ms": 0.20480149833019823,
+      "max_controller_ms": 0.3313000197522342,
+      "failure_reason": null
+    },
+    {
+      "trial": 7,
+      "initial_state": [
+        -3.168796790725041,
+        5.602389234257831,
+        -1.40333146770659,
+        0.0
+      ],
+      "final_state": [
+        1.4642917402406666,
+        1.7005222655678287,
+        -0.023842578217733237,
+        0.010169831057822324
+      ],
+      "initial_distance_xy": 6.209738589181657,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.1988264150840509,
+      "avg_state_msd": 0.4875299072891297,
+      "avg_control_msd": 11.447832882989744,
+      "quadratic_cost": 20917.38766859221,
+      "mean_controller_ms": 0.19552750076400116,
+      "max_controller_ms": 0.685799983330071,
+      "failure_reason": null
+    },
+    {
+      "trial": 8,
+      "initial_state": [
+        -0.3545862406457516,
+        2.190929798075093,
+        1.517532636755186,
+        0.0
+      ],
+      "final_state": [
+        1.3991237555372924,
+        1.610478266852928,
+        0.0015250204832228508,
+        0.013108181514701188
+      ],
+      "initial_distance_xy": 1.8036678372943205,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.0242352243881445,
+      "avg_state_msd": 0.2386774359780874,
+      "avg_control_msd": 8.381425624851286,
+      "quadratic_cost": 2529.215134365749,
+      "mean_controller_ms": 0.17815649945987388,
+      "max_controller_ms": 0.2660999889485538,
+      "failure_reason": null
+    },
+    {
+      "trial": 9,
+      "initial_state": [
+        5.279146328507432,
+        -2.2589553066897916,
+        -1.9079897264152255,
+        0.0
+      ],
+      "final_state": [
+        2.7148161395363597,
+        0.8200406073156542,
+        -6.484116048099798,
+        -0.9046266999916461
+      ],
+      "initial_distance_xy": 5.378836583479757,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 3.000332973132563,
+      "avg_state_msd": 0.661586797064601,
+      "avg_control_msd": 91.66993545245127,
+      "quadratic_cost": 63063.717386979115,
+      "mean_controller_ms": 0.19434550107689574,
+      "max_controller_ms": 0.35550002939999104,
+      "failure_reason": null
+    },
+    {
+      "trial": 10,
+      "initial_state": [
+        -3.468198708845212,
+        -3.568479332560654,
+        0.6839893540932911,
+        0.0
+      ],
+      "final_state": [
+        -2.017397982214976,
+        -4.325139400000847,
+        -31.833590669314663,
+        0.48644203160512933
+      ],
+      "initial_distance_xy": 6.39028975194082,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 9.246643547237683,
+      "avg_state_msd": 3.13200667830688,
+      "avg_control_msd": 25.0289300773543,
+      "quadratic_cost": 103550.12418523473,
+      "mean_controller_ms": 0.19155450107064098,
+      "max_controller_ms": 0.32950000604614615,
+      "failure_reason": null
+    },
+    {
+      "trial": 11,
+      "initial_state": [
+        4.25462819296148,
+        -4.987814567493618,
+        -1.3201618380512397,
+        0.0
+      ],
+      "final_state": [
+        0.8161641045547041,
+        0.9931672331078779,
+        0.2446695991134447,
+        -0.11575221653485618
+      ],
+      "initial_distance_xy": 6.815168961156318,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.5510904779857189,
+      "avg_state_msd": 0.9725908522278292,
+      "avg_control_msd": 19.978499252312208,
+      "quadratic_cost": 33815.00308243889,
+      "mean_controller_ms": 0.19180150266038254,
+      "max_controller_ms": 0.34279999090358615,
+      "failure_reason": null
+    },
+    {
+      "trial": 12,
+      "initial_state": [
+        -5.971233925953046,
+        -0.5079774499382701,
+        -1.7982963843984758,
+        0.0
+      ],
+      "final_state": [
+        0.5906943074249094,
+        0.8792887204899918,
+        0.8129464453769617,
+        0.04642279016009972
+      ],
+      "initial_distance_xy": 7.1324679066842664,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.3893862076221604,
+      "avg_state_msd": 0.7080195971846651,
+      "avg_control_msd": 10.304497735116321,
+      "quadratic_cost": 28360.289055469275,
+      "mean_controller_ms": 0.2148654984193854,
+      "max_controller_ms": 0.3504999913275242,
+      "failure_reason": null
+    },
+    {
+      "trial": 13,
+      "initial_state": [
+        5.9555919793053675,
+        -0.44180954480424006,
+        -0.5114467721484361,
+        0.0
+      ],
+      "final_state": [
+        0.6898091663919692,
+        1.0167173308653417,
+        0.26095736263732017,
+        -0.10012108198643517
+      ],
+      "initial_distance_xy": 5.161076111514371,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.6879866090971277,
+      "avg_state_msd": 0.3854569544137311,
+      "avg_control_msd": 29.59576813640271,
+      "quadratic_cost": 12750.887499036115,
+      "mean_controller_ms": 0.20190749986795709,
+      "max_controller_ms": 0.3501999890431762,
+      "failure_reason": null
+    },
+    {
+      "trial": 14,
+      "initial_state": [
+        2.0835314889203325,
+        1.1708535996767608,
+        0.35003127795092137,
+        0.0
+      ],
+      "final_state": [
+        0.5464365718259776,
+        0.9354112682874307,
+        0.8121563672265721,
+        0.015350356592837051
+      ],
+      "initial_distance_xy": 1.0969190672079776,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.3456588837060008,
+      "avg_state_msd": 0.06396486430970509,
+      "avg_control_msd": 4.070543565940728,
+      "quadratic_cost": 1645.4631279465007,
+      "mean_controller_ms": 0.18086700030835345,
+      "max_controller_ms": 0.3578999894671142,
+      "failure_reason": null
+    },
+    {
+      "trial": 15,
+      "initial_state": [
+        5.9687815655415495,
+        1.6467716986401513,
+        -1.0590426846767649,
+        0.0
+      ],
+      "final_state": [
+        0.9956632769239416,
+        1.2169227014428174,
+        0.20989320335100803,
+        0.014824434561208936
+      ],
+      "initial_distance_xy": 5.0106989408891245,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.44597706243109275,
+      "avg_state_msd": 0.3636536605980147,
+      "avg_control_msd": 23.929084156597337,
+      "quadratic_cost": 12293.707991286872,
+      "mean_controller_ms": 0.1726700019207783,
+      "max_controller_ms": 0.2829000004567206,
+      "failure_reason": null
+    },
+    {
+      "trial": 16,
+      "initial_state": [
+        -3.981510893953108,
+        -1.904757342298348,
+        0.13615800255550736,
+        0.0
+      ],
+      "final_state": [
+        0.6220941732045995,
+        0.8371968184924182,
+        0.7806991712689837,
+        -0.027480800006773245
+      ],
+      "initial_distance_xy": 5.766547147488665,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.3488889795787393,
+      "avg_state_msd": 0.28513608133308177,
+      "avg_control_msd": 4.048178061619799,
+      "quadratic_cost": 16651.832556076028,
+      "mean_controller_ms": 0.17321749939583242,
+      "max_controller_ms": 0.6447999621741474,
+      "failure_reason": null
+    },
+    {
+      "trial": 17,
+      "initial_state": [
+        -4.714870091496705,
+        -4.005136932784536,
+        1.2776843033667817,
+        0.0
+      ],
+      "final_state": [
+        -3.153940860944901,
+        -4.799945342112758,
+        -36.870810631668924,
+        -0.5475809215841028
+      ],
+      "initial_distance_xy": 7.596784574976926,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 11.329768336050359,
+      "avg_state_msd": 3.9941837619255605,
+      "avg_control_msd": 24.145638211504792,
+      "quadratic_cost": 142596.79111491647,
+      "mean_controller_ms": 0.1918230004957877,
+      "max_controller_ms": 0.3006000188179314,
+      "failure_reason": null
+    },
+    {
+      "trial": 18,
+      "initial_state": [
+        -2.649089209212837,
+        4.268228590107249,
+        0.9607260550619547,
+        0.0
+      ],
+      "final_state": [
+        1.448668620646164,
+        1.667454622552383,
+        -0.019503960727902572,
+        -0.00480155445812834
+      ],
+      "initial_distance_xy": 4.8986906591443375,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.140428758384578,
+      "avg_state_msd": 0.3744639718824627,
+      "avg_control_msd": 15.353673083748065,
+      "quadratic_cost": 12654.241481718765,
+      "mean_controller_ms": 0.1799740007845685,
+      "max_controller_ms": 0.31050003599375486,
+      "failure_reason": null
+    },
+    {
+      "trial": 19,
+      "initial_state": [
+        -2.597539552201507,
+        -3.9839209117883985,
+        -1.0702024630054443,
+        0.0
+      ],
+      "final_state": [
+        0.7749031996296187,
+        0.6468122719471667,
+        -11.681513706200514,
+        0.15426909061911295
+      ],
+      "initial_distance_xy": 6.1466867892073305,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.6174105272009864,
+      "avg_state_msd": 1.5906114588333835,
+      "avg_control_msd": 15.675941419195484,
+      "quadratic_cost": 51087.68171184311,
+      "mean_controller_ms": 0.18767850007861853,
+      "max_controller_ms": 0.31430000672116876,
+      "failure_reason": null
+    },
+    {
+      "trial": 20,
+      "initial_state": [
+        4.231819062573134,
+        -4.878104037249189,
+        0.39012104043790874,
+        0.0
+      ],
+      "final_state": [
+        0.7928102189457408,
+        0.9996469711631838,
+        0.2496362968260244,
+        -0.11282011780714593
+      ],
+      "initial_distance_xy": 6.707962546551397,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.5699992245242458,
+      "avg_state_msd": 0.7748018675934654,
+      "avg_control_msd": 19.388954740269497,
+      "quadratic_cost": 31299.759803661043,
+      "mean_controller_ms": 0.18818649725290015,
+      "max_controller_ms": 0.2843000111170113,
+      "failure_reason": null
+    },
+    {
+      "trial": 21,
+      "initial_state": [
+        2.5921779740013857,
+        -5.298784981393473,
+        0.40251510152368164,
+        0.0
+      ],
+      "final_state": [
+        0.6789585546457045,
+        0.9512007901684482,
+        0.2571648298507406,
+        -0.15455093864349612
+      ],
+      "initial_distance_xy": 6.496901026083369,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.7815564236800839,
+      "avg_state_msd": 0.7545562705214556,
+      "avg_control_msd": 23.204745480335365,
+      "quadratic_cost": 25016.297563252996,
+      "mean_controller_ms": 0.19921599770896137,
+      "max_controller_ms": 0.5231000250205398,
+      "failure_reason": null
+    },
+    {
+      "trial": 22,
+      "initial_state": [
+        5.102426864596772,
+        1.3507882305704841,
+        1.5623932186227534,
+        0.0
+      ],
+      "final_state": [
+        0.9983885956647609,
+        1.217482756094637,
+        0.20670904584738958,
+        -0.043199149421697544
+      ],
+      "initial_distance_xy": 4.117397061502822,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.4690023556989633,
+      "avg_state_msd": 0.3326767225462917,
+      "avg_control_msd": 63.88358606900221,
+      "quadratic_cost": 7536.468438109413,
+      "mean_controller_ms": 0.21371000009821728,
+      "max_controller_ms": 0.9392999927513301,
+      "failure_reason": null
+    },
+    {
+      "trial": 23,
+      "initial_state": [
+        5.185533109774891,
+        -2.355304389377521,
+        1.7290934684317913,
+        0.0
+      ],
+      "final_state": [
+        0.8951535813188796,
+        1.068400849696707,
+        0.270795472721044,
+        -0.05477775357905039
+      ],
+      "initial_distance_xy": 5.364396979940795,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.4988204946779218,
+      "avg_state_msd": 0.5974961400933329,
+      "avg_control_msd": 83.19474014871666,
+      "quadratic_cost": 18990.521051640535,
+      "mean_controller_ms": 0.21740399941336364,
+      "max_controller_ms": 0.36290002753958106,
+      "failure_reason": null
+    },
+    {
+      "trial": 24,
+      "initial_state": [
+        -2.1141932016284453,
+        1.70447348775029,
+        0.5527435207397939,
+        0.0
+      ],
+      "final_state": [
+        1.255517996382857,
+        1.4404691950034967,
+        0.0524413193816582,
+        -0.011033619249316581
+      ],
+      "initial_distance_xy": 3.192879921326808,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.7594621300173285,
+      "avg_state_msd": 0.21467878275851382,
+      "avg_control_msd": 10.082693396607281,
+      "quadratic_cost": 4417.164201232058,
+      "mean_controller_ms": 0.24049750092672184,
+      "max_controller_ms": 0.6573999999091029,
+      "failure_reason": null
+    },
+    {
+      "trial": 25,
+      "initial_state": [
+        -0.8964885267279286,
+        2.4634587295302968,
+        1.787284763050644,
+        0.0
+      ],
+      "final_state": [
+        1.3509652420808829,
+        1.5731697309212358,
+        0.007449259665242042,
+        0.02126621666976591
+      ],
+      "initial_distance_xy": 2.3954916374408612,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.9528504493371266,
+      "avg_state_msd": 0.28871107376165184,
+      "avg_control_msd": 7.741466036615005,
+      "quadratic_cost": 3389.5369017629555,
+      "mean_controller_ms": 0.21896049787756056,
+      "max_controller_ms": 0.34550001146271825,
+      "failure_reason": null
+    },
+    {
+      "trial": 26,
+      "initial_state": [
+        -1.21043531165971,
+        -4.14143369019102,
+        1.73815786981968,
+        0.0
+      ],
+      "final_state": [
+        1.0407661763128226,
+        0.35196237301760025,
+        0.09531872176694459,
+        0.0006248728534552226
+      ],
+      "initial_distance_xy": 5.596460011262781,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.7847473979156222,
+      "avg_state_msd": 0.4614376861722247,
+      "avg_control_msd": 18.072027576832326,
+      "quadratic_cost": 16115.08761065496,
+      "mean_controller_ms": 0.23040249972837046,
+      "max_controller_ms": 0.34309999318793416,
+      "failure_reason": null
+    },
+    {
+      "trial": 27,
+      "initial_state": [
+        2.3626875620285794,
+        0.9837624253808119,
+        -1.7242923814743327,
+        0.0
+      ],
+      "final_state": [
+        0.4704138018132274,
+        0.935221447603251,
+        0.40589915653126885,
+        -0.048214433250427464
+      ],
+      "initial_distance_xy": 1.362784300810993,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.048478340365218,
+      "avg_state_msd": 0.24072260479514526,
+      "avg_control_msd": 73.07269476318085,
+      "quadratic_cost": 1420.9033351353555,
+      "mean_controller_ms": 0.2245345013216138,
+      "max_controller_ms": 0.3203999949619174,
+      "failure_reason": null
+    },
+    {
+      "trial": 28,
+      "initial_state": [
+        4.644161115518296,
+        4.208298364573659,
+        -1.007955884453191,
+        0.0
+      ],
+      "final_state": [
+        1.5505515321463779,
+        1.8763765248306752,
+        -0.027572169035489102,
+        -0.02114228017227888
+      ],
+      "initial_distance_xy": 4.855212521814217,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.475642506184821,
+      "avg_state_msd": 0.3844617077092943,
+      "avg_control_msd": 7.578671227266534,
+      "quadratic_cost": 12569.505071843696,
+      "mean_controller_ms": 0.19774500105995685,
+      "max_controller_ms": 0.311399984639138,
+      "failure_reason": null
+    },
+    {
+      "trial": 29,
+      "initial_state": [
+        -0.40371960567209975,
+        5.833550524218079,
+        -1.2543767599602984,
+        0.0
+      ],
+      "final_state": [
+        1.4083734277308113,
+        1.6271590020740367,
+        -0.007602834565780617,
+        -0.010122823914956933
+      ],
+      "initial_distance_xy": 5.033253361546297,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.0532580882855855,
+      "avg_state_msd": 0.5864189399750896,
+      "avg_control_msd": 14.75486421048465,
+      "quadratic_cost": 17671.142869773277,
+      "mean_controller_ms": 0.1950120009132661,
+      "max_controller_ms": 0.29229995561763644,
+      "failure_reason": null
+    },
+    {
+      "trial": 30,
+      "initial_state": [
+        3.352815483087104,
+        3.4427945242719638,
+        0.3068191394561044,
+        0.0
+      ],
+      "final_state": [
+        1.56411224802228,
+        1.8722600681469987,
+        -0.03860583471813432,
+        0.035135493407388106
+      ],
+      "initial_distance_xy": 3.391605193012225,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.5101136442948013,
+      "avg_state_msd": 0.1735929338897404,
+      "avg_control_msd": 5.614915299143031,
+      "quadratic_cost": 6620.944114870385,
+      "mean_controller_ms": 0.1875505008501932,
+      "max_controller_ms": 0.3212000010535121,
+      "failure_reason": null
+    },
+    {
+      "trial": 31,
+      "initial_state": [
+        2.1269029636511068,
+        -2.4599254807392468,
+        -1.2716604841058476,
+        0.0
+      ],
+      "final_state": [
+        0.4255201557660332,
+        0.8769210435628634,
+        0.3948747047397446,
+        -0.05063554920402719
+      ],
+      "initial_distance_xy": 3.6388177505550283,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.1430690546148752,
+      "avg_state_msd": 0.3094009293014354,
+      "avg_control_msd": 9.372922525601886,
+      "quadratic_cost": 8843.821088542265,
+      "mean_controller_ms": 0.2159494993975386,
+      "max_controller_ms": 0.3347000456415117,
+      "failure_reason": null
+    },
+    {
+      "trial": 32,
+      "initial_state": [
+        2.1615765585014373,
+        -2.4453240190092833,
+        -1.072304596478875,
+        0.0
+      ],
+      "final_state": [
+        0.42628169558778434,
+        0.8385024449599117,
+        0.42880363354290724,
+        -0.05923920320679004
+      ],
+      "initial_distance_xy": 3.6358654674261977,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.2232586962020013,
+      "avg_state_msd": 0.6269941892420812,
+      "avg_control_msd": 19.004885549667883,
+      "quadratic_cost": 9228.659012207716,
+      "mean_controller_ms": 0.22883800003910437,
+      "max_controller_ms": 0.34959998447448015,
+      "failure_reason": null
+    },
+    {
+      "trial": 33,
+      "initial_state": [
+        4.021179461089989,
+        -3.7542007710022296,
+        0.3979540832213435,
+        0.0
+      ],
+      "final_state": [
+        0.8388293766347015,
+        1.0646566829938306,
+        0.2887906766834985,
+        -0.0668762690523264
+      ],
+      "initial_distance_xy": 5.632934431280929,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.581494252094954,
+      "avg_state_msd": 0.6265066039375428,
+      "avg_control_msd": 22.146533068281222,
+      "quadratic_cost": 19282.47095396955,
+      "mean_controller_ms": 0.2402150013949722,
+      "max_controller_ms": 0.37369999336078763,
+      "failure_reason": null
+    },
+    {
+      "trial": 34,
+      "initial_state": [
+        5.785042404085251,
+        -4.574420445436079,
+        0.8825945980210452,
+        0.0
+      ],
+      "final_state": [
+        0.9874313258915123,
+        1.1370974934336866,
+        0.2517594027162193,
+        -0.06290345478880914
+      ],
+      "initial_distance_xy": 7.34648175056535,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.4643290250472028,
+      "avg_state_msd": 0.771358230650478,
+      "avg_control_msd": 80.09863394541603,
+      "quadratic_cost": 38103.05077089507,
+      "mean_controller_ms": 0.1978730014525354,
+      "max_controller_ms": 0.33850001636892557,
+      "failure_reason": null
+    },
+    {
+      "trial": 35,
+      "initial_state": [
+        3.0182166168250806,
+        0.3347578987044244,
+        1.7288238299462897,
+        0.0
+      ],
+      "final_state": [
+        0.9516227940643645,
+        1.1711784369450067,
+        0.25715450251935457,
+        0.0017913120275683458
+      ],
+      "initial_distance_xy": 2.12502832116775,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.4785014574275651,
+      "avg_state_msd": 0.32257843172376766,
+      "avg_control_msd": 6.946576088988038,
+      "quadratic_cost": 2124.0144872307674,
+      "mean_controller_ms": 0.19963950384408236,
+      "max_controller_ms": 0.34060003235936165,
+      "failure_reason": null
+    },
+    {
+      "trial": 36,
+      "initial_state": [
+        -3.857055586383238,
+        -4.511015455293499,
+        -0.32930880522388994,
+        0.0
+      ],
+      "final_state": [
+        -2.498226483647715,
+        -5.274568527530281,
+        -37.258816084619966,
+        -0.14132848330803827
+      ],
+      "initial_distance_xy": 7.345902280707281,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 10.354419252943588,
+      "avg_state_msd": 3.739981582481759,
+      "avg_control_msd": 26.631049458123652,
+      "quadratic_cost": 139535.45409741622,
+      "mean_controller_ms": 0.19779000023845583,
+      "max_controller_ms": 0.3440000000409782,
+      "failure_reason": null
+    },
+    {
+      "trial": 37,
+      "initial_state": [
+        2.722060587583373,
+        -2.099012118543151,
+        1.4405064043766127,
+        0.0
+      ],
+      "final_state": [
+        0.626599051712759,
+        0.9729772258317331,
+        0.2744709753724986,
+        -0.11760085020530454
+      ],
+      "initial_distance_xy": 3.545330559790624,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.7924955480333111,
+      "avg_state_msd": 0.3911004802926589,
+      "avg_control_msd": 23.207098194278377,
+      "quadratic_cost": 8960.555018953497,
+      "mean_controller_ms": 0.18132599885575473,
+      "max_controller_ms": 0.36990002263337374,
+      "failure_reason": null
+    },
+    {
+      "trial": 38,
+      "initial_state": [
+        4.447523083806939,
+        0.5405426320663116,
+        -0.6287508608642551,
+        0.0
+      ],
+      "final_state": [
+        0.9468133512763238,
+        1.1671878478425142,
+        0.2594171770571684,
+        -0.0015505014117063072
+      ],
+      "initial_distance_xy": 3.4780046702571084,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.48134217503506505,
+      "avg_state_msd": 0.22269738411465134,
+      "avg_control_msd": 5.297920462806866,
+      "quadratic_cost": 4970.45795546139,
+      "mean_controller_ms": 0.18474999960744753,
+      "max_controller_ms": 0.34359999699518085,
+      "failure_reason": null
+    },
+    {
+      "trial": 39,
+      "initial_state": [
+        5.722385106295597,
+        -4.094034021003363,
+        -0.813876258972948,
+        0.0
+      ],
+      "final_state": [
+        0.9060756792051274,
+        1.0935716713533827,
+        0.26581520633663863,
+        -0.07736112200269277
+      ],
+      "initial_distance_xy": 6.946229459159996,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.5306723204875867,
+      "avg_state_msd": 0.9552012867571823,
+      "avg_control_msd": 70.91989018939603,
+      "quadratic_cost": 34966.540495661706,
+      "mean_controller_ms": 0.18535500072175637,
+      "max_controller_ms": 0.5587000050581992,
+      "failure_reason": null
+    },
+    {
+      "trial": 40,
+      "initial_state": [
+        4.470632298582309,
+        2.2969636062576324,
+        1.8787880782028448,
+        0.0
+      ],
+      "final_state": [
+        0.3827648126735798,
+        0.7803412251137526,
+        0.5800469212224493,
+        -0.06384965949058106
+      ],
+      "initial_distance_xy": 3.7050510317564487,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.480790542925698,
+      "avg_state_msd": 0.22887227872235597,
+      "avg_control_msd": 4.862746573969879,
+      "quadratic_cost": 6463.973700053537,
+      "mean_controller_ms": 0.19279650005046278,
+      "max_controller_ms": 0.5493999924510717,
+      "failure_reason": null
+    },
+    {
+      "trial": 41,
+      "initial_state": [
+        -3.7890524095112146,
+        -2.6334032682732498,
+        -1.5806001454041843,
+        0.0
+      ],
+      "final_state": [
+        0.6371712391139299,
+        0.7935817132033184,
+        -5.791487373909639,
+        -0.13541138519990992
+      ],
+      "initial_distance_xy": 6.011376072992264,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.1963563661526087,
+      "avg_state_msd": 0.9104349881499734,
+      "avg_control_msd": 10.944346252453494,
+      "quadratic_cost": 33641.50065038024,
+      "mean_controller_ms": 0.199288502917625,
+      "max_controller_ms": 0.674600014463067,
+      "failure_reason": null
+    },
+    {
+      "trial": 42,
+      "initial_state": [
+        5.900126029516587,
+        -4.794638237316594,
+        -1.9866575566759033,
+        0.0
+      ],
+      "final_state": [
+        0.9971384108105926,
+        1.084121965870922,
+        -6.637396517797436,
+        -0.060129557113514
+      ],
+      "initial_distance_xy": 7.588746102388559,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.5013243227916928,
+      "avg_state_msd": 0.9016887753890455,
+      "avg_control_msd": 72.54601233628684,
+      "quadratic_cost": 49250.17278475178,
+      "mean_controller_ms": 0.19360899925231934,
+      "max_controller_ms": 0.3600000054575503,
+      "failure_reason": null
+    },
+    {
+      "trial": 43,
+      "initial_state": [
+        5.901111609618116,
+        1.8267223728303623,
+        1.411803026036842,
+        0.0
+      ],
+      "final_state": [
+        1.026953699090064,
+        1.2272589379018064,
+        0.19719235940069738,
+        -0.023911815623358677
+      ],
+      "initial_distance_xy": 4.970348568427746,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.4753168120159265,
+      "avg_state_msd": 0.3852166475419941,
+      "avg_control_msd": 57.29032094754459,
+      "quadratic_cost": 12155.443281710608,
+      "mean_controller_ms": 0.21080500213429332,
+      "max_controller_ms": 0.7475999882444739,
+      "failure_reason": null
+    },
+    {
+      "trial": 44,
+      "initial_state": [
+        -4.672048005244289,
+        -5.703771735734061,
+        1.820655579698597,
+        0.0
+      ],
+      "final_state": [
+        -3.333347608619525,
+        -6.617431516720096,
+        -37.852732007371884,
+        -0.12104391063066183
+      ],
+      "initial_distance_xy": 8.781382810162793,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 12.225443200264648,
+      "avg_state_msd": 4.226192979855987,
+      "avg_control_msd": 22.31959086942509,
+      "quadratic_cost": 199187.22924423486,
+      "mean_controller_ms": 0.18071949598379433,
+      "max_controller_ms": 0.4078000201843679,
+      "failure_reason": null
+    },
+    {
+      "trial": 45,
+      "initial_state": [
+        -5.206150231217711,
+        -3.604551940473764,
+        -1.1425080991287042,
+        0.0
+      ],
+      "final_state": [
+        -3.8204554359772755,
+        -4.3712877529133225,
+        -38.29500530724712,
+        -0.12884561151277935
+      ],
+      "initial_distance_xy": 7.727755124547124,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 10.916482264572982,
+      "avg_state_msd": 3.8106878174263707,
+      "avg_control_msd": 22.01190066051012,
+      "quadratic_cost": 144803.25338586947,
+      "mean_controller_ms": 0.18368450022535399,
+      "max_controller_ms": 0.3008000203408301,
+      "failure_reason": null
+    },
+    {
+      "trial": 46,
+      "initial_state": [
+        -2.8061916310797166,
+        3.8921715908899337,
+        -1.8850962854229598,
+        0.0
+      ],
+      "final_state": [
+        1.3847132478415478,
+        1.6233220214845434,
+        -0.011234777072140214,
+        0.001905220191568694
+      ],
+      "initial_distance_xy": 4.780350535646114,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.0211752665898002,
+      "avg_state_msd": 0.3917944185355002,
+      "avg_control_msd": 15.060557449700314,
+      "quadratic_cost": 11753.120474298903,
+      "mean_controller_ms": 0.17561250133439898,
+      "max_controller_ms": 0.30830001924186945,
+      "failure_reason": null
+    },
+    {
+      "trial": 47,
+      "initial_state": [
+        -5.53590958460253,
+        4.803855196951609,
+        1.3580492465935676,
+        0.0
+      ],
+      "final_state": [
+        1.4756134489487525,
+        1.7031302033925981,
+        -0.022891297499460266,
+        -0.018790016986490573
+      ],
+      "initial_distance_xy": 7.562237000879765,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.2204249668273013,
+      "avg_state_msd": 0.6040354017951612,
+      "avg_control_msd": 9.95414292277781,
+      "quadratic_cost": 40171.95972499449,
+      "mean_controller_ms": 0.17960849916562438,
+      "max_controller_ms": 0.3206999972462654,
+      "failure_reason": null
+    },
+    {
+      "trial": 48,
+      "initial_state": [
+        3.5746931679130345,
+        4.420499746437214,
+        0.4036528204148948,
+        0.0
+      ],
+      "final_state": [
+        1.5616742967937682,
+        1.866411409197798,
+        -0.03645734706191988,
+        0.012715767840026891
+      ],
+      "initial_distance_xy": 4.281222188146172,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.477258820893513,
+      "avg_state_msd": 0.28418858802500824,
+      "avg_control_msd": 12.728075297367742,
+      "quadratic_cost": 10448.670931434994,
+      "mean_controller_ms": 0.1860855010454543,
+      "max_controller_ms": 0.31179998768493533,
+      "failure_reason": null
+    },
+    {
+      "trial": 49,
+      "initial_state": [
+        0.36198791909585815,
+        -3.3444937414575584,
+        -1.6457370809346905,
+        0.0
+      ],
+      "final_state": [
+        0.4052988646327908,
+        0.7523985546047234,
+        0.4753235609668762,
+        -0.15155389741462427
+      ],
+      "initial_distance_xy": 4.391091582390821,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.4691800391439862,
+      "avg_state_msd": 0.7189559153848455,
+      "avg_control_msd": 18.28971317281474,
+      "quadratic_cost": 12094.71407688928,
+      "mean_controller_ms": 0.18920049944426864,
+      "max_controller_ms": 0.3084000200033188,
+      "failure_reason": null
+    },
+    {
+      "trial": 50,
+      "initial_state": [
+        -3.5490100458800127,
+        4.5869220750641375,
+        0.9916051064924445,
+        0.0
+      ],
+      "final_state": [
+        1.4613056123715573,
+        1.6787007014766868,
+        -0.021793846202398704,
+        -0.005422219838881033
+      ],
+      "initial_distance_xy": 5.793056392794713,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.167222379889524,
+      "avg_state_msd": 0.3993739361077036,
+      "avg_control_msd": 14.904602361421816,
+      "quadratic_cost": 18627.478510222136,
+      "mean_controller_ms": 0.20825350016821176,
+      "max_controller_ms": 0.3208999987691641,
+      "failure_reason": null
+    },
+    {
+      "trial": 51,
+      "initial_state": [
+        -3.128905575165424,
+        -4.016225930461036,
+        -0.5529128619522465,
+        0.0
+      ],
+      "final_state": [
+        -0.6243173351288922,
+        -1.2358587865662978,
+        -24.41204563762241,
+        1.9320774327436654
+      ],
+      "initial_distance_xy": 6.496951887928816,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 6.512949145534792,
+      "avg_state_msd": 2.791606004252179,
+      "avg_control_msd": 22.124157397109528,
+      "quadratic_cost": 88540.13946847328,
+      "mean_controller_ms": 0.21961400139844045,
+      "max_controller_ms": 0.3361999988555908,
+      "failure_reason": null
+    },
+    {
+      "trial": 52,
+      "initial_state": [
+        -3.7485803357974246,
+        1.392052908985601,
+        -0.16292158800498902,
+        0.0
+      ],
+      "final_state": [
+        0.5214462872679178,
+        1.093998827408762,
+        0.41280153399710223,
+        0.01923480287554799
+      ],
+      "initial_distance_xy": 4.764737210903246,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.0045888770134945,
+      "avg_state_msd": 0.24962162985663433,
+      "avg_control_msd": 9.30329698904672,
+      "quadratic_cost": 10471.857780340159,
+      "mean_controller_ms": 0.2142004988854751,
+      "max_controller_ms": 1.0194999631494284,
+      "failure_reason": null
+    },
+    {
+      "trial": 53,
+      "initial_state": [
+        -5.847699656562957,
+        -0.1580725737967743,
+        0.04356074721354464,
+        0.0
+      ],
+      "final_state": [
+        0.5895516589373169,
+        0.8984777720434515,
+        0.7458915697344342,
+        -0.10554330639837392
+      ],
+      "initial_distance_xy": 6.9449350373256,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.3634054451520397,
+      "avg_state_msd": 0.6590040289302572,
+      "avg_control_msd": 13.990203131895191,
+      "quadratic_cost": 28759.91771121222,
+      "mean_controller_ms": 0.22258999873884022,
+      "max_controller_ms": 0.3632999723777175,
+      "failure_reason": null
+    },
+    {
+      "trial": 54,
+      "initial_state": [
+        1.2643150542906305,
+        -3.153938083345457,
+        1.211692210536825,
+        0.0
+      ],
+      "final_state": [
+        0.4373045870235039,
+        0.8496206362473252,
+        0.42201924505029165,
+        -0.12417081187862987
+      ],
+      "initial_distance_xy": 4.162338771435164,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.2592648336580923,
+      "avg_state_msd": 0.4439282745199485,
+      "avg_control_msd": 20.08041709396254,
+      "quadratic_cost": 9588.91654750791,
+      "mean_controller_ms": 0.19578049919800833,
+      "max_controller_ms": 0.2953999792225659,
+      "failure_reason": null
+    },
+    {
+      "trial": 55,
+      "initial_state": [
+        -5.142537673660229,
+        5.626552430560928,
+        -0.8467801069769982,
+        0.0
+      ],
+      "final_state": [
+        1.4762343860379255,
+        1.7068342917516957,
+        -0.014894944981111106,
+        -0.009627288844874137
+      ],
+      "initial_distance_xy": 7.6899776634958075,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.2075909116156063,
+      "avg_state_msd": 0.7304752928303632,
+      "avg_control_msd": 13.239537937257223,
+      "quadratic_cost": 38264.554526125394,
+      "mean_controller_ms": 0.19527450174791738,
+      "max_controller_ms": 0.30419998802244663,
+      "failure_reason": null
+    },
+    {
+      "trial": 56,
+      "initial_state": [
+        2.255785933957741,
+        2.975155548928841,
+        1.3827841358014181,
+        0.0
+      ],
+      "final_state": [
+        1.5440148484707434,
+        1.8441279711123708,
+        -0.03599791952997624,
+        -0.0010417759698245943
+      ],
+      "initial_distance_xy": 2.3405635548710286,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.4251825150829152,
+      "avg_state_msd": 0.2555071515122346,
+      "avg_control_msd": 13.346715769696914,
+      "quadratic_cost": 4543.364307070687,
+      "mean_controller_ms": 0.23301850073039532,
+      "max_controller_ms": 1.0043000220321119,
+      "failure_reason": null
+    },
+    {
+      "trial": 57,
+      "initial_state": [
+        -0.826987708241143,
+        3.7456584764402407,
+        -0.41443131738455685,
+        0.0
+      ],
+      "final_state": [
+        1.4495172460629633,
+        1.6746030873016282,
+        -0.011935753137773474,
+        0.0012370881792970875
+      ],
+      "initial_distance_xy": 3.297957633947466,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.1372931746816621,
+      "avg_state_msd": 0.21755311112915088,
+      "avg_control_msd": 12.966860764836998,
+      "quadratic_cost": 6249.281309166316,
+      "mean_controller_ms": 0.1749739985098131,
+      "max_controller_ms": 0.2685000072233379,
+      "failure_reason": null
+    },
+    {
+      "trial": 58,
+      "initial_state": [
+        1.178710162392175,
+        5.997979536327829,
+        -1.3503895791751552,
+        0.0
+      ],
+      "final_state": [
+        1.4525847195715513,
+        1.6876224143052074,
+        -0.017053178212721204,
+        0.011188638353160512
+      ],
+      "initial_distance_xy": 5.001173539050008,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.1684489504426405,
+      "avg_state_msd": 0.5857704255581716,
+      "avg_control_msd": 24.400969132798537,
+      "quadratic_cost": 16183.247345044134,
+      "mean_controller_ms": 0.187113496940583,
+      "max_controller_ms": 0.2932000206783414,
+      "failure_reason": null
+    },
+    {
+      "trial": 59,
+      "initial_state": [
+        -1.932884533322552,
+        -5.473841960909461,
+        -0.6744533159759314,
+        0.0
+      ],
+      "final_state": [
+        0.6489956781310173,
+        0.5911789688953671,
+        -6.007873592012418,
+        -0.1784564085196396
+      ],
+      "initial_distance_xy": 7.107210523168333,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.213593476660424,
+      "avg_state_msd": 1.0967512539254982,
+      "avg_control_msd": 15.24398826411255,
+      "quadratic_cost": 42387.09376249378,
+      "mean_controller_ms": 0.21570249984506518,
+      "max_controller_ms": 0.5613000248558819,
+      "failure_reason": null
+    },
+    {
+      "trial": 60,
+      "initial_state": [
+        -3.4111812971070417,
+        5.076964453440818,
+        -1.9071316387348123,
+        0.0
+      ],
+      "final_state": [
+        1.4399995778657142,
+        1.6781884803799576,
+        0.0028344265457927865,
+        -0.043346983399157345
+      ],
+      "initial_distance_xy": 6.006676251519384,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.1643694681906218,
+      "avg_state_msd": 0.4821407023769211,
+      "avg_control_msd": 14.61440366311931,
+      "quadratic_cost": 19789.25814516302,
+      "mean_controller_ms": 0.22772949829231948,
+      "max_controller_ms": 0.4050999996252358,
+      "failure_reason": null
+    },
+    {
+      "trial": 61,
+      "initial_state": [
+        -1.3666216338388768,
+        -3.221152965312034,
+        0.3884874608553952,
+        0.0
+      ],
+      "final_state": [
+        0.309735264547995,
+        0.5266279455935857,
+        0.9987788297189416,
+        0.2659928709851156
+      ],
+      "initial_distance_xy": 4.839321265871566,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 2.428408490562477,
+      "avg_state_msd": 0.33998619423802057,
+      "avg_control_msd": 10.27266892724589,
+      "quadratic_cost": 13377.855520841778,
+      "mean_controller_ms": 0.22587800165638328,
+      "max_controller_ms": 0.39299996569752693,
+      "failure_reason": null
+    },
+    {
+      "trial": 62,
+      "initial_state": [
+        5.503139492617253,
+        -4.848644816438153,
+        -0.502002339696749,
+        0.0
+      ],
+      "final_state": [
+        0.8851874368193056,
+        1.007157860238874,
+        0.24424830418708252,
+        -0.15119704140418272
+      ],
+      "initial_distance_xy": 7.381389535772925,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.5174157690108336,
+      "avg_state_msd": 0.9615198642073671,
+      "avg_control_msd": 88.15633903459768,
+      "quadratic_cost": 42173.94419951196,
+      "mean_controller_ms": 0.18449299706844613,
+      "max_controller_ms": 0.31259999377653,
+      "failure_reason": null
+    },
+    {
+      "trial": 63,
+      "initial_state": [
+        1.4492468755443007,
+        -5.768585398948076,
+        -1.3939641101956477,
+        0.0
+      ],
+      "final_state": [
+        0.5906378338791527,
+        0.8549600816001552,
+        0.3073864783362847,
+        -0.1589633414046834
+      ],
+      "initial_distance_xy": 6.783477799627518,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.0207519042616602,
+      "avg_state_msd": 0.9192998991803936,
+      "avg_control_msd": 23.315586182127937,
+      "quadratic_cost": 28334.52817051456,
+      "mean_controller_ms": 0.18223649909486994,
+      "max_controller_ms": 0.33599999733269215,
+      "failure_reason": null
+    },
+    {
+      "trial": 64,
+      "initial_state": [
+        4.370487933716461,
+        3.842382582564362,
+        -0.45935895419829764,
+        0.0
+      ],
+      "final_state": [
+        1.5602085407156914,
+        1.8438459557445122,
+        -0.03133357738411296,
+        -0.005558229219086592
+      ],
+      "initial_distance_xy": 4.409005291105185,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.440946303063403,
+      "avg_state_msd": 0.3067494421546281,
+      "avg_control_msd": 6.302145433629088,
+      "quadratic_cost": 10414.823593584046,
+      "mean_controller_ms": 0.1837449983577244,
+      "max_controller_ms": 0.28059998294338584,
+      "failure_reason": null
+    },
+    {
+      "trial": 65,
+      "initial_state": [
+        -2.3857083307162212,
+        1.549932799301823,
+        0.9745038913833626,
+        0.0
+      ],
+      "final_state": [
+        0.6871255836015808,
+        1.3798485473827944,
+        0.01227843307803357,
+        0.2634077019126207
+      ],
+      "initial_distance_xy": 3.430079734412767,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.9684090987718679,
+      "avg_state_msd": 0.2299906747479825,
+      "avg_control_msd": 12.393568145543037,
+      "quadratic_cost": 5755.56279786764,
+      "mean_controller_ms": 0.1920540034188889,
+      "max_controller_ms": 0.3312000189907849,
+      "failure_reason": null
+    },
+    {
+      "trial": 66,
+      "initial_state": [
+        1.7957326056763385,
+        2.7682645635039247,
+        1.524377078869473,
+        0.0
+      ],
+      "final_state": [
+        1.5369350628024985,
+        1.8564150504093038,
+        -0.03283275126796209,
+        0.024645802091111602
+      ],
+      "initial_distance_xy": 1.9390590363060585,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.4508286665708758,
+      "avg_state_msd": 0.2054960540401254,
+      "avg_control_msd": 12.284304392308018,
+      "quadratic_cost": 3745.4987199673324,
+      "mean_controller_ms": 0.20275899820262566,
+      "max_controller_ms": 0.8859999943524599,
+      "failure_reason": null
+    },
+    {
+      "trial": 67,
+      "initial_state": [
+        -5.569641675811228,
+        4.3994652786491315,
+        0.8719848122672844,
+        0.0
+      ],
+      "final_state": [
+        1.5003274082406843,
+        1.736390729801357,
+        -0.052721356333540095,
+        0.0401200502120692
+      ],
+      "initial_distance_xy": 7.397064007381359,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.3295595445876505,
+      "avg_state_msd": 0.5837636048981949,
+      "avg_control_msd": 10.4723474930069,
+      "quadratic_cost": 39571.450883853875,
+      "mean_controller_ms": 0.1793835000717081,
+      "max_controller_ms": 0.3037999849766493,
+      "failure_reason": null
+    },
+    {
+      "trial": 68,
+      "initial_state": [
+        2.426438195329684,
+        -2.3234243774359045,
+        1.3917919138629187,
+        0.0
+      ],
+      "final_state": [
+        0.4830109891290229,
+        0.895455708060327,
+        0.3872367247772596,
+        -0.12721769167709743
+      ],
+      "initial_distance_xy": 3.616611054237189,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.1359877192650072,
+      "avg_state_msd": 0.40056789163033774,
+      "avg_control_msd": 18.140340780267,
+      "quadratic_cost": 8900.741713416362,
+      "mean_controller_ms": 0.19453450426226482,
+      "max_controller_ms": 0.28450001263991,
+      "failure_reason": null
+    },
+    {
+      "trial": 69,
+      "initial_state": [
+        -4.195395321062785,
+        1.6694908683697456,
+        -1.6316367528234208,
+        0.0
+      ],
+      "final_state": [
+        0.4753867623207275,
+        1.0147352111410446,
+        0.39791078834602894,
+        -0.020066260711678316
+      ],
+      "initial_distance_xy": 5.238353802956761,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.9573254978780243,
+      "avg_state_msd": 0.36622241065590516,
+      "avg_control_msd": 9.15960732034337,
+      "quadratic_cost": 13983.645458026234,
+      "mean_controller_ms": 0.2225704988813959,
+      "max_controller_ms": 0.36239996552467346,
+      "failure_reason": null
+    },
+    {
+      "trial": 70,
+      "initial_state": [
+        1.5252274448061858,
+        -3.9561645387843827,
+        -0.6897633703503114,
+        0.0
+      ],
+      "final_state": [
+        0.4662066290712987,
+        0.8396535631108769,
+        0.3928775086572111,
+        -0.17155148794563452
+      ],
+      "initial_distance_xy": 4.983917214830263,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.25856880442067,
+      "avg_state_msd": 0.6953964250111659,
+      "avg_control_msd": 19.620826032226386,
+      "quadratic_cost": 14044.272591201932,
+      "mean_controller_ms": 0.20090050267754123,
+      "max_controller_ms": 0.3328000311739743,
+      "failure_reason": null
+    },
+    {
+      "trial": 71,
+      "initial_state": [
+        4.188020504680761,
+        -1.3903986184931005,
+        -1.538506356793123,
+        0.0
+      ],
+      "final_state": [
+        0.8334422212517518,
+        1.088372020256458,
+        0.2942889609165553,
+        -0.028067183234209127
+      ],
+      "initial_distance_xy": 3.9846556053890905,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.5772859431554705,
+      "avg_state_msd": 0.30835522807461774,
+      "avg_control_msd": 8.70730546343691,
+      "quadratic_cost": 7867.005248061914,
+      "mean_controller_ms": 0.1924644989776425,
+      "max_controller_ms": 0.35260000731796026,
+      "failure_reason": null
+    },
+    {
+      "trial": 72,
+      "initial_state": [
+        2.5744575993934653,
+        -0.5353844758291109,
+        1.0859498834820283,
+        0.0
+      ],
+      "final_state": [
+        0.3695697989593825,
+        0.8630972806037542,
+        0.3936599459790908,
+        -0.013613369372194989
+      ],
+      "initial_distance_xy": 2.1991639822680042,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.174606235788149,
+      "avg_state_msd": 0.3144431365139156,
+      "avg_control_msd": 8.300237237175397,
+      "quadratic_cost": 2939.6991181748094,
+      "mean_controller_ms": 0.19776699860813096,
+      "max_controller_ms": 0.3257999778725207,
+      "failure_reason": null
+    },
+    {
+      "trial": 73,
+      "initial_state": [
+        2.1753652040170177,
+        -0.8183140070747683,
+        0.7634818609360985,
+        0.0
+      ],
+      "final_state": [
+        0.5653581990145562,
+        0.9358218610026942,
+        0.8130894850205536,
+        -0.015597405788151185
+      ],
+      "initial_distance_xy": 2.165121056924593,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.3275068307914544,
+      "avg_state_msd": 0.3512594763344737,
+      "avg_control_msd": 7.6571106653509196,
+      "quadratic_cost": 3603.284112869869,
+      "mean_controller_ms": 0.1888634986244142,
+      "max_controller_ms": 0.2821000525727868,
+      "failure_reason": null
+    },
+    {
+      "trial": 74,
+      "initial_state": [
+        1.8593512561734098,
+        4.627184094145795,
+        -0.042320769673222625,
+        0.0
+      ],
+      "final_state": [
+        1.4489890733328505,
+        1.6862365617581336,
+        -0.004274566468791168,
+        0.011587048937425345
+      ],
+      "initial_distance_xy": 3.7275929276560054,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.1510872504972005,
+      "avg_state_msd": 0.3440671078835013,
+      "avg_control_msd": 24.883667512691567,
+      "quadratic_cost": 7928.329476603665,
+      "mean_controller_ms": 0.18002200202317908,
+      "max_controller_ms": 0.28899998869746923,
+      "failure_reason": null
+    },
+    {
+      "trial": 75,
+      "initial_state": [
+        -5.665487260642443,
+        5.534138054263849,
+        -1.0511380985391465,
+        0.0
+      ],
+      "final_state": [
+        1.4259032603236417,
+        1.6603032065788208,
+        -0.04781320582382827,
+        0.07820129571519942
+      ],
+      "initial_distance_xy": 8.061459440877332,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.2122209684414902,
+      "avg_state_msd": 0.8173395645616004,
+      "avg_control_msd": 13.449388544487036,
+      "quadratic_cost": 43381.132363966164,
+      "mean_controller_ms": 0.20567349944030866,
+      "max_controller_ms": 0.3254999755881727,
+      "failure_reason": null
+    },
+    {
+      "trial": 76,
+      "initial_state": [
+        -5.963477541106759,
+        1.9291422187003509,
+        0.801478809497294,
+        0.0
+      ],
+      "final_state": [
+        0.622501056952631,
+        0.8180619406600419,
+        7.0806298737013424,
+        0.010418257062276847
+      ],
+      "initial_distance_xy": 7.025192148836189,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.3672998259713598,
+      "avg_state_msd": 0.9328583383906977,
+      "avg_control_msd": 21.24058936524477,
+      "quadratic_cost": 48792.340191666975,
+      "mean_controller_ms": 0.19380800076760352,
+      "max_controller_ms": 0.3273999900557101,
+      "failure_reason": null
+    },
+    {
+      "trial": 77,
+      "initial_state": [
+        4.6443677906006045,
+        -1.7306078559619342,
+        -1.7834770704458598,
+        0.0
+      ],
+      "final_state": [
+        0.8208971186137296,
+        1.0797721987879851,
+        0.31195214211920824,
+        -0.02538919342541497
+      ],
+      "initial_distance_xy": 4.553859446250858,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.5962164157188788,
+      "avg_state_msd": 0.4004319530362735,
+      "avg_control_msd": 10.074246036879174,
+      "quadratic_cost": 11129.895406636979,
+      "mean_controller_ms": 0.17996249604038894,
+      "max_controller_ms": 0.28119998751208186,
+      "failure_reason": null
+    },
+    {
+      "trial": 78,
+      "initial_state": [
+        -0.34170742464497117,
+        2.67294341475678,
+        -0.17025663985074901,
+        0.0
+      ],
+      "final_state": [
+        1.3883418359850115,
+        1.6177829776719175,
+        0.00024456705762608815,
+        0.005273347808824425
+      ],
+      "initial_distance_xy": 2.1445089140233287,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.0116427285233796,
+      "avg_state_msd": 0.14922655067596674,
+      "avg_control_msd": 14.183161005912643,
+      "quadratic_cost": 3021.0644122457043,
+      "mean_controller_ms": 0.2103504992555827,
+      "max_controller_ms": 0.6131000118330121,
+      "failure_reason": null
+    },
+    {
+      "trial": 79,
+      "initial_state": [
+        -2.536569643134928,
+        -0.5723905792907704,
+        -1.9354154550864222,
+        0.0
+      ],
+      "final_state": [
+        0.5599070728520885,
+        0.936322309528567,
+        0.8054057165120868,
+        0.0021102678472330557
+      ],
+      "initial_distance_xy": 3.8703665168283323,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.3112866019786644,
+      "avg_state_msd": 0.3481840735168811,
+      "avg_control_msd": 4.944148725119706,
+      "quadratic_cost": 8169.927634216796,
+      "mean_controller_ms": 0.20569799817167222,
+      "max_controller_ms": 0.33300003269687295,
+      "failure_reason": null
+    },
+    {
+      "trial": 80,
+      "initial_state": [
+        -1.762922555712633,
+        4.716933474252528,
+        1.2898739563182673,
+        0.0
+      ],
+      "final_state": [
+        1.4599175951586947,
+        1.7005974340873895,
+        0.0024982502972920777,
+        -0.034057858167887284
+      ],
+      "initial_distance_xy": 4.631342731960634,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.1970711377112635,
+      "avg_state_msd": 0.4585952129442861,
+      "avg_control_msd": 10.921277617534551,
+      "quadratic_cost": 12534.833616995005,
+      "mean_controller_ms": 0.21776499837869778,
+      "max_controller_ms": 0.41610002517700195,
+      "failure_reason": null
+    },
+    {
+      "trial": 81,
+      "initial_state": [
+        -3.525435702599367,
+        1.0655177304198302,
+        -1.799732108034271,
+        0.0
+      ],
+      "final_state": [
+        0.492230171349422,
+        1.018706990835992,
+        0.39729880332752776,
+        -0.021152906526408825
+      ],
+      "initial_distance_xy": 4.525909949541682,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.9449285293405066,
+      "avg_state_msd": 0.3958606236629172,
+      "avg_control_msd": 9.625460144737566,
+      "quadratic_cost": 9941.289965932969,
+      "mean_controller_ms": 0.20797399803996086,
+      "max_controller_ms": 0.8430000161752105,
+      "failure_reason": null
+    },
+    {
+      "trial": 82,
+      "initial_state": [
+        -2.954490853835994,
+        3.889575651778525,
+        -0.11240636714723529,
+        0.0
+      ],
+      "final_state": [
+        1.4136910399120262,
+        1.6406832248003058,
+        -0.00953818834609021,
+        0.02335019369804143
+      ],
+      "initial_distance_xy": 4.8977183831273745,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.0872626467564634,
+      "avg_state_msd": 0.32379129819840846,
+      "avg_control_msd": 17.296995896300835,
+      "quadratic_cost": 12857.994909223531,
+      "mean_controller_ms": 0.19036200013943017,
+      "max_controller_ms": 0.3068999503739178,
+      "failure_reason": null
+    },
+    {
+      "trial": 83,
+      "initial_state": [
+        -0.9250779427042932,
+        5.977774259626328,
+        1.1864462299607403,
+        0.0
+      ],
+      "final_state": [
+        1.4301437465989697,
+        1.656048935735536,
+        -0.009038874252262435,
+        0.0015022828011511842
+      ],
+      "initial_distance_xy": 5.337055523908762,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.0967338393879194,
+      "avg_state_msd": 0.6483161234049062,
+      "avg_control_msd": 14.672730405437207,
+      "quadratic_cost": 19911.01447834966,
+      "mean_controller_ms": 0.20228399749612436,
+      "max_controller_ms": 0.39950001519173384,
+      "failure_reason": null
+    },
+    {
+      "trial": 84,
+      "initial_state": [
+        0.10560658927396283,
+        -3.164614994663814,
+        -0.7221505967204367,
+        0.0
+      ],
+      "final_state": [
+        0.3850847055062508,
+        0.7466308023074035,
+        0.5512118929994383,
+        -0.10072085235767039
+      ],
+      "initial_distance_xy": 4.259572469970294,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.5202172375434544,
+      "avg_state_msd": 0.6410416698293933,
+      "avg_control_msd": 17.532191168496247,
+      "quadratic_cost": 10477.699130395704,
+      "mean_controller_ms": 0.19640700076706707,
+      "max_controller_ms": 0.347800028976053,
+      "failure_reason": null
+    },
+    {
+      "trial": 85,
+      "initial_state": [
+        5.478587717024716,
+        2.3978808204601556,
+        1.3898018720754441,
+        0.0
+      ],
+      "final_state": [
+        0.3822285907717733,
+        0.768216494641417,
+        0.57313647482861,
+        -0.08082646851866665
+      ],
+      "initial_distance_xy": 4.691675471225074,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.5035178579340864,
+      "avg_state_msd": 0.2556156171422469,
+      "avg_control_msd": 15.405383911071858,
+      "quadratic_cost": 10542.717597796936,
+      "mean_controller_ms": 0.19001849956111982,
+      "max_controller_ms": 0.3161000204272568,
+      "failure_reason": null
+    },
+    {
+      "trial": 86,
+      "initial_state": [
+        -3.973202781487401,
+        0.5671692857821622,
+        0.3917289629883607,
+        0.0
+      ],
+      "final_state": [
+        0.49466854861954285,
+        1.0140444874485497,
+        0.39584257029485953,
+        0.010130270026204598
+      ],
+      "initial_distance_xy": 4.992002437195354,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.9253487791500711,
+      "avg_state_msd": 0.4034365426790027,
+      "avg_control_msd": 12.422377045162778,
+      "quadratic_cost": 13112.72915142711,
+      "mean_controller_ms": 0.20227150118444115,
+      "max_controller_ms": 0.34500000765547156,
+      "failure_reason": null
+    },
+    {
+      "trial": 87,
+      "initial_state": [
+        0.04749010002283782,
+        -2.2750912016256795,
+        1.5960357982567954,
+        0.0
+      ],
+      "final_state": [
+        0.5077853617825919,
+        0.8927547186492688,
+        0.8049107347983389,
+        0.04524895906089744
+      ],
+      "initial_distance_xy": 3.4107913287858054,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.4496196134273758,
+      "avg_state_msd": 0.3873724827462408,
+      "avg_control_msd": 30.507843364913764,
+      "quadratic_cost": 7414.963753265556,
+      "mean_controller_ms": 0.18589349783724174,
+      "max_controller_ms": 0.32160000409930944,
+      "failure_reason": null
+    },
+    {
+      "trial": 88,
+      "initial_state": [
+        5.410274970895353,
+        1.2827443347115661,
+        1.1541342046462555,
+        0.0
+      ],
+      "final_state": [
+        1.0004260784610564,
+        1.2130471190920582,
+        0.21577507681228214,
+        0.005889153761178923
+      ],
+      "initial_distance_xy": 4.419329098145723,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.43513742812657563,
+      "avg_state_msd": 0.3240994997484747,
+      "avg_control_msd": 25.05841351738029,
+      "quadratic_cost": 8407.205147072233,
+      "mean_controller_ms": 0.20819399825995788,
+      "max_controller_ms": 0.33870001789182425,
+      "failure_reason": null
+    },
+    {
+      "trial": 89,
+      "initial_state": [
+        1.6503544967749395,
+        -5.540043866356494,
+        -1.1189490038107897,
+        0.0
+      ],
+      "final_state": [
+        0.6755922995250222,
+        0.9198817903186887,
+        0.26290235316634014,
+        -0.15181484025326714
+      ],
+      "initial_distance_xy": 6.572300567179089,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.8192431035758962,
+      "avg_state_msd": 0.8958182531682997,
+      "avg_control_msd": 21.267880018538243,
+      "quadratic_cost": 25777.749833326405,
+      "mean_controller_ms": 0.21063299820525572,
+      "max_controller_ms": 0.3405000315979123,
+      "failure_reason": null
+    },
+    {
+      "trial": 90,
+      "initial_state": [
+        -2.0775670200559393,
+        3.834785415159958,
+        1.3073408274765792,
+        0.0
+      ],
+      "final_state": [
+        1.4078815570683292,
+        1.6309462276137023,
+        -0.009345977861088354,
+        0.008671764221457847
+      ],
+      "initial_distance_xy": 4.184187748289936,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.0568455267645775,
+      "avg_state_msd": 0.3699615229910339,
+      "avg_control_msd": 17.289230300334065,
+      "quadratic_cost": 9528.045333725904,
+      "mean_controller_ms": 0.1880815005279146,
+      "max_controller_ms": 0.41960005182772875,
+      "failure_reason": null
+    },
+    {
+      "trial": 91,
+      "initial_state": [
+        -5.831453787727383,
+        3.582829803267529,
+        0.370319935844595,
+        0.0
+      ],
+      "final_state": [
+        1.4252519059315445,
+        1.658792511972907,
+        -0.009310845638542665,
+        0.002755423673089589
+      ],
+      "initial_distance_xy": 7.303408152807961,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.0961106872160837,
+      "avg_state_msd": 0.7295076180597521,
+      "avg_control_msd": 17.94575293521468,
+      "quadratic_cost": 40866.86773069683,
+      "mean_controller_ms": 0.19175349967554212,
+      "max_controller_ms": 0.3037999849766493,
+      "failure_reason": null
+    },
+    {
+      "trial": 92,
+      "initial_state": [
+        -5.43208117295412,
+        5.090020863740692,
+        1.892536850257898,
+        0.0
+      ],
+      "final_state": [
+        1.4544857813947742,
+        1.6950176274296254,
+        -0.025779454123107216,
+        0.02917688105971915
+      ],
+      "initial_distance_xy": 7.622331590878542,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.2044597440072258,
+      "avg_state_msd": 0.669373206448457,
+      "avg_control_msd": 11.010893719170646,
+      "quadratic_cost": 40835.32353703969,
+      "mean_controller_ms": 0.19585250003729016,
+      "max_controller_ms": 0.3247999702580273,
+      "failure_reason": null
+    },
+    {
+      "trial": 93,
+      "initial_state": [
+        -2.9256645721527144,
+        -1.1452390298043493,
+        1.241227337273671,
+        0.0
+      ],
+      "final_state": [
+        0.5704724852575462,
+        0.9296536079086487,
+        0.8064680106918278,
+        -0.029458016252389356
+      ],
+      "initial_distance_xy": 4.4735771847651025,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.3357999337780224,
+      "avg_state_msd": 0.22798394245843973,
+      "avg_control_msd": 5.205129735113092,
+      "quadratic_cost": 10403.73537973576,
+      "mean_controller_ms": 0.19150749634718522,
+      "max_controller_ms": 0.311399984639138,
+      "failure_reason": null
+    },
+    {
+      "trial": 94,
+      "initial_state": [
+        -4.792300113136385,
+        -2.91385207642463,
+        -1.9412118678608459,
+        0.0
+      ],
+      "final_state": [
+        0.6221038627135321,
+        0.7553062270528711,
+        -5.965548241690128,
+        -0.2387115549566815
+      ],
+      "initial_distance_xy": 6.9906350696323125,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.1789385306797362,
+      "avg_state_msd": 0.8354791883582797,
+      "avg_control_msd": 11.150887792832293,
+      "quadratic_cost": 35801.45025922098,
+      "mean_controller_ms": 0.19506049662595615,
+      "max_controller_ms": 0.29940000968053937,
+      "failure_reason": null
+    },
+    {
+      "trial": 95,
+      "initial_state": [
+        -2.6010036553092393,
+        -0.15057635896340216,
+        0.7541106864262854,
+        0.0
+      ],
+      "final_state": [
+        0.4688814332254864,
+        1.0031421635789333,
+        0.390775516545402,
+        0.013380164601370984
+      ],
+      "initial_distance_xy": 3.7803509471153576,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.9384164115002199,
+      "avg_state_msd": 0.16879780013180395,
+      "avg_control_msd": 6.228853934019503,
+      "quadratic_cost": 7093.370473134685,
+      "mean_controller_ms": 0.19475549808703363,
+      "max_controller_ms": 0.3273999900557101,
+      "failure_reason": null
+    },
+    {
+      "trial": 96,
+      "initial_state": [
+        -5.9730341511006095,
+        -5.606997898031974,
+        0.2580981709088368,
+        0.0
+      ],
+      "final_state": [
+        -4.944287924433025,
+        -6.345962864189367,
+        -39.74189913496125,
+        -1.009738578831932
+      ],
+      "initial_distance_xy": 9.606020325661106,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 16.342776659338057,
+      "avg_state_msd": 4.369935680643499,
+      "avg_control_msd": 22.85978543404587,
+      "quadratic_cost": 237199.93453739834,
+      "mean_controller_ms": 0.19989650056231767,
+      "max_controller_ms": 0.3102999762631953,
+      "failure_reason": null
+    },
+    {
+      "trial": 97,
+      "initial_state": [
+        -3.207311364692578,
+        3.190427463831398,
+        0.5115391007811896,
+        0.0
+      ],
+      "final_state": [
+        1.4100639382798201,
+        1.6278282431037456,
+        -0.007556292326083101,
+        0.01710026099326999
+      ],
+      "initial_distance_xy": 4.743357607621228,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.0625487347029188,
+      "avg_state_msd": 0.2953609317320644,
+      "avg_control_msd": 15.722389406292287,
+      "quadratic_cost": 12482.09875467889,
+      "mean_controller_ms": 0.1857214974006638,
+      "max_controller_ms": 0.3141000051982701,
+      "failure_reason": null
+    },
+    {
+      "trial": 98,
+      "initial_state": [
+        3.5882930935019672,
+        0.9694742089434607,
+        1.7706843618128039,
+        0.0
+      ],
+      "final_state": [
+        1.061115933782574,
+        1.252370854158495,
+        0.1839362414669302,
+        -0.015245342531133728
+      ],
+      "initial_distance_xy": 2.588473094662104,
+      "success": true,
+      "completed": true,
+      "steps": 200,
+      "ace": 0.512668371939133,
+      "avg_state_msd": 0.3318518324722869,
+      "avg_control_msd": 86.29096352051639,
+      "quadratic_cost": 3031.878501039581,
+      "mean_controller_ms": 0.1980560037191026,
+      "max_controller_ms": 0.40330004412680864,
+      "failure_reason": null
+    },
+    {
+      "trial": 99,
+      "initial_state": [
+        -3.1380497139462404,
+        -5.192186679801086,
+        -1.6425678389813005,
+        0.0
+      ],
+      "final_state": [
+        0.6241609794757346,
+        0.7948413852818348,
+        -18.026253047483284,
+        0.18402982419866068
+      ],
+      "initial_distance_xy": 7.447592316487024,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.5883303334965673,
+      "avg_state_msd": 2.2853483218970116,
+      "avg_control_msd": 18.35634919920951,
+      "quadratic_cost": 84787.9835060633,
+      "mean_controller_ms": 0.20771050039911643,
+      "max_controller_ms": 0.4047999973408878,
+      "failure_reason": null
+    },
+    {
+      "trial": 100,
+      "initial_state": [
+        4.390567587664144,
+        5.701040889869164,
+        -1.896389506851377,
+        0.0
+      ],
+      "final_state": [
+        1.4418009843512614,
+        1.7669335845395375,
+        12.459045817527397,
+        0.26557759369767525
+      ],
+      "initial_distance_xy": 5.796182710607087,
+      "success": false,
+      "completed": true,
+      "steps": 200,
+      "ace": 1.5816369594202504,
+      "avg_state_msd": 2.004749875777478,
+      "avg_control_msd": 30.23114104977495,
+      "quadratic_cost": 38170.490288664696,
+      "mean_controller_ms": 0.19861949986079708,
+      "max_controller_ms": 0.5949999904260039,
+      "failure_reason": null
+    }
+  ]
+}
