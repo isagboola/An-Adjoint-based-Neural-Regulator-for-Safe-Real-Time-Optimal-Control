@@ -24,7 +24,7 @@ This repository contains the code for the paper "An Adjoint-based Neural Regulat
 
 **Case B: Unseen initial conditions and zero reference**
 <p align="center">
- <img alt="image 1" src="result_images/case_b_obs_anr.png" width="30%" />
+ <img alt="image 1" src="result_images/case_b_obs_anr.png" width="32%" />
   <img alt="Image 2" src="result_images/case_b_obs_rlpb.png"  width="30%" />
   <img alt="Image 3" src="result_images/case_b_obs_mpc.png"  width="30%" />
 </p>
