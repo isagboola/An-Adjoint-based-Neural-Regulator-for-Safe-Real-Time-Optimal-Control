@@ -20,10 +20,10 @@ This repository contains the code for the paper "An Adjoint-based Neural Regulat
 ### **Scenario 2:  With Obstacle State and Control MSD for ANR, RL, and MPC**
 
 **Case B: Unseen initial conditions and zero reference**
-
- <img alt="image 1" src="result_images/case_b_obs_anr.png" width="10%" />
-  <img alt="Image 2" src="result_images/case_b_obs_mpc.png"  width="10%" />
-  <img alt="Image 3" src="result_images/case_b_obs_rlpb.png"  width="10%" />
+<p align="center">
+ <img alt="image 1" src="result_images/case_b_obs_anr.png" width="30%" />
+  <img alt="Image 2" src="result_images/case_b_obs_mpc.png"  width="30%" />
+  <img alt="Image 3" src="result_images/case_b_obs_rlpb.png"  width="30%" />
 
 
 
